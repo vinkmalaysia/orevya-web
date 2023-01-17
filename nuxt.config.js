@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         families: {
             'Jost': [400, 500, 600, 700],
             'Parisienne': [400],
+            'Mrs Saint Delafield': [400],
         },
     },
 })

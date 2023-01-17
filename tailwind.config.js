@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'Jost': ['Jost', ...defaultTheme.fontFamily.sans],
-        'Parisienne': ['Parisienne', ...defaultTheme.fontFamily.serif],
+        'Parisienne': ['Parisienne', ...defaultTheme.fontFamily.serif, 'cursive'],
+        'Mrs Saint Delafield': ['Mrs Saint Delafield', ...defaultTheme.fontFamily.serif, 'cursive']
       }
     }
   }

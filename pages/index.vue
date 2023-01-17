@@ -161,6 +161,34 @@
           <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/chicken.webp')] bg-cover bg-center bg-no-repeat"></div>
         </div>
       </section>
+      <h1 class="text-6xl font-['Mrs_Saint_Delafield'] py-6 mt-12">Signature</h1>
+      <div class="flex gap-3 h-[800px]">
+          <AccordionGallerySlide
+              src="/images/dish/beef-tenderloin.jpg"
+              title="Beef Tenderloin"
+              description="Slow-smoked, spice-infused beef tenderloin, served with a sprinkle of salt and pepper on top of the natural flavor."
+          />
+          <AccordionGallerySlide
+              src="/images/dish/mushroom-pasta.jpg"
+              title="Mushroom Pasta"
+              description="Spaghetti noodles tossed with sautéed mushrooms, garlic, and onions in a rich cream sauce."
+          />
+          <AccordionGallerySlide
+              src="/images/dish/lamb-chop.jpg"
+              title="Rosemary Lamb"
+              description="Tender lamb chops marinated in rosemary and garlic, grilled to perfection."
+          />
+          <AccordionGallerySlide
+              src="/images/dish/chicken-chop.jpg"
+              title="Chicken Chop"
+              description="Traditional fried chicken chop with fries."
+          />
+          <AccordionGallerySlide
+              src="/images/dish/pork-burger.jpg"
+              title="Signature Pork Burger"
+              description="Our signature juicy pork burger grilled with a secret black pepper sauce."
+          />
+      </div>
     </main>
   </div>
 </template>
