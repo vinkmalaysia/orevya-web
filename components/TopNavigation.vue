@@ -1,5 +1,5 @@
 <template>
-  <section id="mobile-nav" class="relative pt-4 pb-6 lg:hidden bg-transparent" style="z-index: var(--zindex-topnav);">
+  <section id="mobile-nav" class="py-4 w-full lg:hidden bg-white fixed top-0" style="z-index: var(--zindex-topnav);">
     <svg class="mx-auto block" viewBox="0 0 100 19" height="24">
       <defs>
         <linearGradient id="logo-gradient-mobile" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">

@@ -13,6 +13,8 @@
     "nuxt": "3.0.0"
   },
   "dependencies": {
-    "gsap": "^3.11.4"
+    "@vueuse/core": "^9.10.0",
+    "gsap": "^3.11.4",
+    "lodash-es": "^4.17.21"
   }
 }

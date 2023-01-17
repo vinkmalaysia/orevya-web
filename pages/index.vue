@@ -27,7 +27,7 @@
   </Style>
   <FullscreenMenu />
   <TopNavigation :expanded="isMobileMenuExpanded" @click="toggleMobileMenu" />
-  <div class="flex w-full">
+  <div class="flex w-full mt-14">
     <section class="max-lg:hidden sticky top-0 h-full px-10">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
@@ -131,38 +131,74 @@ import FullscreenMenu from '~/components/FullscreenMenu.vue';
 import HeaderGallerySlide from '~/components/HeaderGallerySlide.vue';
 import TopNavigation from '~/components/TopNavigation.vue';
 
+import { useScrollLock, breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+import throttle from 'lodash-es/throttle';
 import { gsap } from "gsap";
 
 const isMobileMenuExpanded = ref(false);
-const mobileMenuAnimation = gsap.timeline({ paused: true });
+const mobileMenuAnimation = gsap.timeline({ reversed: true });
+
+let viewportScrollLocked;
+
+if (typeof window !== 'undefined') {
+  viewportScrollLocked = useScrollLock(document.documentElement);
+
+
+  mobileMenuAnimation
+      .from("#fullscreen-menu-wrapper", {
+        autoAlpha: 0,
+        duration: 0.7,
+        y: -500,
+        ease: "power4.out",
+      })
+      .from("#fullscreen-menu-wrapper > nav > ul > a", {
+        duration: .9,
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        ease: 'expo.inOut',
+      }, "-=.75");
+}
 
 function toggleMobileMenu () {
   const isVisible = !isMobileMenuExpanded.value;
-  isMobileMenuExpanded.value = isVisible;
-
-  mobileMenuAnimation.reversed(!isVisible);
+  setMenuVisibility(isVisible);
 }
 
-onMounted(() => {
-  mobileMenuAnimation
-    .from("#fullscreen-menu-wrapper", {
-      autoAlpha: 0,
-      duration: 0.7,
-      y: -500,
-      opacity: 0,
-      ease: "power4.out",
-    })
-    .from("#fullscreen-menu-wrapper > nav > ul > a", {
-      duration: .9,
-      opacity: 0,
-      y: 30,
-      stagger: 0.2,
-      ease: 'expo.inOut',
-    }, "-=.75");
+function setMenuVisibility(visible) {
+  // Show/hide menu
+  isMobileMenuExpanded.value = visible;
 
-  if (!isMobileMenuExpanded.value) {
-    mobileMenuAnimation.reverse();
+  // Lock/unlock viewport scroll
+  if (viewportScrollLocked) {
+    viewportScrollLocked.value = visible;
   }
+
+  // Set menu transition animation to play forward/backward
+  mobileMenuAnimation.reversed(!visible);
+}
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+
+const autoCloseMobileMenuOnResize = throttle(function () {
+  const breakpoint_lg = breakpoints.greaterOrEqual('lg');
+
+  if (breakpoint_lg.value) {
+    // Desktop
+    // Auto close menu
+    setMenuVisibility(false);
+
+    // Reset animation to start position
+    mobileMenuAnimation.reversed(true).seek(0);
+  }
+}, 80);
+
+onMounted(() => {
+  window.addEventListener('resize', autoCloseMobileMenuOnResize);
 })
+
+onUnmounted(() => {
+  window.removeEventListener('resize', autoCloseMobileMenuOnResize);
+});
 
 </script>
