@@ -11,5 +11,8 @@
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.11.4"
   }
 }

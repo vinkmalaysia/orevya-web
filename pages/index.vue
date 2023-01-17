@@ -23,8 +23,73 @@
       background: var(--scrollbar-background);
     }
   </Style>
+  <section id="fullscreen-menu-wrapper" class="fixed inset-0 bg-[#eee] lg:hidden" style="visibility: hidden">
+    <nav class="pt-16">
+      <ul class="grid grid-rows-3 text-4xl font-Parisienne text-md text-center">
+        <NuxtLink to="/menu">
+          <li class="py-4 text-[#333] bg-gray-200 bg-right hover:bg-left" style="background-image: linear-gradient(160deg, #f3f3f3 0%, #d3d3d3 100%); background-size: 175%; transition: background-position .6s;">
+            <span>Menu</span>
+            <div class="rounded-full border-2 border-[#777] h-12 w-12 mx-auto mt-2" style="transform: scaleX(-1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="48" width="48" style="transform: translateX(-1px) translateY(1px)">
+                <g stroke="#777">
+                  <line stroke-width=".5" x1="4" y1="7" x2="11" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  <polyline stroke-width=".5" points="9 5 11 7 9 9" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </li>
+        </NuxtLink>
+        <NuxtLink to="/careers">
+          <li class="py-4 text-white bg-right hover:bg-left" style="background-image: linear-gradient(160deg, #f1953b 0%, #4f202d 100%); background-size: 175%; transition: background-position .6s;">
+            <span>Careers</span>
+            <div class="rounded-full border-2 border-white h-12 w-12 mx-auto mt-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="48" width="48" style="transform: translateX(-1px) translateY(1px)">
+                <g stroke="white">
+                  <line stroke-width=".5" x1="4" y1="7" x2="11" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  <polyline stroke-width=".5" points="9 5 11 7 9 9" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </li>
+        </NuxtLink>
+        <NuxtLink to="/about">
+          <li class="py-4 text-[#333] bg-gray-200 bg-right hover:bg-left" style="background-image: linear-gradient(160deg, #f3f3f3 0%, #d3d3d3 100%); background-size: 175%; transition: background-position .6s;">
+            <span>About</span>
+            <div class="rounded-full border-2 border-[#777] h-12 w-12 mx-auto mt-2" style="transform: scaleX(-1)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="48" width="48" style="transform: translateX(-1px) translateY(1px)">
+                <g stroke="#777">
+                  <line stroke-width=".5" x1="4" y1="7" x2="11" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  <polyline stroke-width=".5" points="9 5 11 7 9 9" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </div>
+          </li>
+        </NuxtLink>
+      </ul>
+    </nav>
+  </section>
+  <section id="mobile-nav" class="relative pt-4 lg:hidden bg-transparent">
+    <svg class="mx-auto block" viewBox="0 0 100 19" height="24">
+      <defs>
+        <linearGradient id="logo-gradient-mobile" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="objectBoundingBox">
+          <stop stop-color="#ba6900" offset="0%"/>
+          <stop stop-color="#622a54" offset="100%"/>
+        </linearGradient>
+      </defs>
+      <text fill="url(#logo-gradient-mobile)" x="0" y="18" style="font-size: 24px; font-weight: 700; font-family: 'Jost', Arial, serif;">
+        OREVYA
+      </text>
+    </svg>
+    <div class="absolute top-0 right-0 w-10 h-10 m-2">
+      <button class="rounded-full h-full w-full border transition-[border]" :class="{'border-neutral-400': !isMobileMenuExpanded, 'border-transparent': isMobileMenuExpanded }" @click="toggleMobileMenu" :aria-expanded="isMobileMenuExpanded" aria-label="Mobile Menu" aria-controls="mobile-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" aria-hidden="true" class="mx-auto text-neutral-600 transition-transform" :class="{'rotate-180': isMobileMenuExpanded}">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 200l144 160 144-160"/>
+        </svg>
+      </button>
+    </div>
+  </section>
   <div class="flex w-full">
-    <section class="sticky top-0 h-full px-10">
+    <section class="max-lg:hidden sticky top-0 h-full px-10">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
           <svg class="m-auto block" viewBox="0 0 100 19" height="32">
@@ -70,3 +135,40 @@
     </section>
   </div>
 </template>
+
+<script setup>
+import { gsap } from "gsap";
+
+const isMobileMenuExpanded = ref(false);
+const mobileMenuAnimation = gsap.timeline({ paused: true });
+
+function toggleMobileMenu () {
+  const isVisible = !isMobileMenuExpanded.value;
+  isMobileMenuExpanded.value = isVisible;
+
+  mobileMenuAnimation.reversed(!isVisible);
+}
+
+onMounted(() => {
+  mobileMenuAnimation
+    .from("#fullscreen-menu-wrapper", {
+      autoAlpha: 0,
+      duration: 0.7,
+      y: -500,
+      opacity: 0,
+      ease: "power4.out",
+    })
+    .from("#fullscreen-menu-wrapper > nav > ul > a", {
+      duration: .9,
+      opacity: 0,
+      y: 30,
+      stagger: 0.2,
+      ease: 'expo.inOut',
+    }, "-=.75");
+
+  if (!isMobileMenuExpanded.value) {
+    mobileMenuAnimation.reverse();
+  }
+})
+
+</script>
