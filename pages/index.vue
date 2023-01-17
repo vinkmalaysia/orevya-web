@@ -148,18 +148,10 @@
     <main class="grow">
       <!-- Small Gallery -->
       <section class="grid grid-cols-4 h-[250px]">
-        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
-          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/ribeye.webp')] bg-cover bg-center bg-no-repeat"></div>
-        </div>
-        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
-          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/shrimps.jpg')] bg-cover bg-center bg-no-repeat"></div>
-        </div>
-        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
-          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/seafood-spaghetti.jpg')] bg-cover bg-center bg-no-repeat"></div>
-        </div>
-        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
-          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/chicken.webp')] bg-cover bg-center bg-no-repeat"></div>
-        </div>
+        <HeaderGallerySlide src="/images/dish/ribeye.webp" />
+        <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
+        <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
+        <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
       </section>
       <h1 class="text-6xl font-['Mrs_Saint_Delafield'] py-6 mt-12">Signature</h1>
       <div class="flex gap-3 h-[800px]">
@@ -192,24 +184,6 @@
     </main>
   </div>
 </template>
-
-<style scoped>
-.header-gallery {
-  .gallery-img-container {
-    transition: transform 1s;
-
-    /* Fix grid gap bug */
-    will-change: transform;
-    transform: scale(1.005);
-  }
-
-  &:hover {
-    .gallery-img-container {
-      transform: scale(1.08);
-    }
-  }
-}
-</style>
 
 <script setup>
 import { gsap } from "gsap";
