@@ -70,7 +70,7 @@
       </ul>
     </nav>
   </section>
-  <section id="mobile-nav" class="relative pt-4 lg:hidden bg-transparent" style="z-index: var(--zindex-topnav);">
+  <section id="mobile-nav" class="relative pt-4 pb-6 lg:hidden bg-transparent" style="z-index: var(--zindex-topnav);">
       <svg class="mx-auto block" viewBox="0 0 100 19" height="24">
         <defs>
           <linearGradient id="logo-gradient-mobile" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
@@ -145,8 +145,43 @@
         </nav>
       </div>
     </section>
+    <main class="grow">
+      <!-- Small Gallery -->
+      <section class="grid grid-cols-4 h-[250px]">
+        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
+          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/ribeye.webp')] bg-cover bg-center bg-no-repeat"></div>
+        </div>
+        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
+          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/shrimps.jpg')] bg-cover bg-center bg-no-repeat"></div>
+        </div>
+        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
+          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/seafood-spaghetti.jpg')] bg-cover bg-center bg-no-repeat"></div>
+        </div>
+        <div class="header-gallery relative h-full w-full overflow-hidden after:content-[''] after:inset-0 after:bg-black/20 after:absolute">
+          <div class="gallery-img-container absolute inset-0 bg-[url('/images/dish/chicken.webp')] bg-cover bg-center bg-no-repeat"></div>
+        </div>
+      </section>
+    </main>
   </div>
 </template>
+
+<style scoped>
+.header-gallery {
+  .gallery-img-container {
+    transition: transform 1s;
+
+    /* Fix grid gap bug */
+    will-change: transform;
+    transform: scale(1.005);
+  }
+
+  &:hover {
+    .gallery-img-container {
+      transform: scale(1.08);
+    }
+  }
+}
+</style>
 
 <script setup>
 import { gsap } from "gsap";
