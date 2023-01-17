@@ -84,11 +84,21 @@
     </section>
     <main class="grow">
       <!-- Small Gallery -->
-      <section class="grid grid-cols-4 h-[250px]">
-        <HeaderGallerySlide src="/images/dish/ribeye.webp" />
-        <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
-        <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
-        <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
+      <section class="relative h-[250px]">
+        <section class="grid grid-cols-4 h-full">
+          <HeaderGallerySlide src="/images/dish/ribeye.webp" />
+          <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
+          <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
+          <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
+        </section>
+        <div class="absolute h-full w-full bottom-0 pointer-events-none" style="background: linear-gradient(0deg,
+          hsla(0, 0%, 100%, 1.0) 0%,
+          hsla(0, 0%, 100%, 0.9) 30%,
+          hsla(0, 0%, 100%, 0.60) 65%,
+          hsla(0, 0%, 100%, 0.2) 91%,
+          hsla(0, 0%, 100%, 0.1) 98.2%,
+          hsla(0, 0%, 100%, 0) 100%);">
+        </div>
       </section>
       <!-- Signature Dish Accordion -->
       <section>
