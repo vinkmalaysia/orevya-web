@@ -129,7 +129,7 @@
       <div class="flex justify-center">
         <button class="relative overflow-hidden border-2 border-[#ba6900] text-[#ba6900] mx-3 px-12 py-4 uppercase font-bold text-sm after:content-[''] after:absolute after:bg-[#ba6900] after:right-0 after:bottom-0 after:h-[18px] after:w-[18px] hover:after:h-[24px] hover:after:w-[24px] after:transition-all after:rotate-45 after:translate-x-1/2 after:translate-y-1/2 font-Jost">Reserve</button>
       </div>
-      <div class="mt-24 flex justify-center">
+      <div class="my-24 flex justify-center">
         <nav id="side-menu" class="text-neutral-800 font-Jost font-medium tracking-wide text-base">
           <ul>
             <li class="[&:not(:last-child)]:mb-[25px]">
@@ -143,6 +143,9 @@
             </li>
           </ul>
         </nav>
+      </div>
+      <div>
+        <div class="h-px w-full bg-gray-300"></div>
       </div>
     </section>
     <main class="grow">
