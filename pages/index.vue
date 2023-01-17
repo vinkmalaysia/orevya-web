@@ -136,15 +136,16 @@ import throttle from 'lodash-es/throttle';
 import { gsap } from "gsap";
 
 const isMobileMenuExpanded = ref(false);
-const mobileMenuAnimation = gsap.timeline({ reversed: true });
-
+let mobileMenuAnimation;
 let viewportScrollLocked;
 
+// Browser only
 if (typeof window !== 'undefined') {
+  // Set scroll lock target
   viewportScrollLocked = useScrollLock(document.documentElement);
 
-
-  mobileMenuAnimation
+  // Define mobile menu transition animation
+  mobileMenuAnimation = gsap.timeline({ reversed: true })
       .from("#fullscreen-menu-wrapper", {
         autoAlpha: 0,
         duration: 0.7,
@@ -160,11 +161,10 @@ if (typeof window !== 'undefined') {
       }, "-=.75");
 }
 
-function toggleMobileMenu () {
-  const isVisible = !isMobileMenuExpanded.value;
-  setMenuVisibility(isVisible);
-}
 
+
+
+/* Mobile menu toggle */
 function setMenuVisibility(visible) {
   // Show/hide menu
   isMobileMenuExpanded.value = visible;
@@ -178,6 +178,15 @@ function setMenuVisibility(visible) {
   mobileMenuAnimation.reversed(!visible);
 }
 
+function toggleMobileMenu () {
+  const isVisible = !isMobileMenuExpanded.value;
+  setMenuVisibility(isVisible);
+}
+
+
+
+
+/* Close mobile menu when window resized/expanded */
 const breakpoints = useBreakpoints(breakpointsTailwind);
 
 const autoCloseMobileMenuOnResize = throttle(function () {
