@@ -102,7 +102,7 @@
       </section>
       <!-- Signature Dish Accordion -->
       <section>
-        <h1 class="text-6xl font-['Mrs_Saint_Delafield'] py-6 mt-12">Signature</h1>
+        <h1 class="text-6xl font-MrsSaintDelafield py-6 mt-12">Signature</h1>
         <div class="flex gap-3 h-[800px]">
           <AccordionGallerySlide
               src="/images/dish/beef-tenderloin.jpg"
