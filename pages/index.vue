@@ -27,7 +27,7 @@
   </Style>
   <FullscreenMenu />
   <TopNavigation :expanded="isMobileMenuExpanded" @click="toggleMobileMenu" />
-  <div class="flex w-full mt-14">
+  <div class="flex w-full max-lg:mt-14">
     <section class="max-lg:hidden sticky top-0 h-full px-10">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
