@@ -82,7 +82,7 @@
         <div class="h-px w-full bg-gray-300"></div>
       </div>
     </section>
-    <main class="grow">
+    <main class="grow min-w-0">
       <!-- Small Gallery -->
       <section class="relative h-[250px]">
         <section class="grid grid-cols-4 h-full">
@@ -103,33 +103,54 @@
       <!-- Signature Dish Accordion -->
       <section>
         <h1 class="text-6xl font-MrsSaintDelafield py-6 mt-12">Signature</h1>
-        <div class="flex gap-3 h-[800px]">
-          <AccordionGallerySlide
-              src="/images/dish/beef-tenderloin.jpg"
-              title="Beef Tenderloin"
-              description="Slow-smoked, spice-infused beef tenderloin, served with a sprinkle of salt and pepper on top of the natural flavor."
-          />
-          <AccordionGallerySlide
-              src="/images/dish/mushroom-pasta.jpg"
-              title="Mushroom Pasta"
-              description="Spaghetti noodles tossed with sautéed mushrooms, garlic, and onions in a rich cream sauce."
-          />
-          <AccordionGallerySlide
-              src="/images/dish/lamb-chop.jpg"
-              title="Rosemary Lamb"
-              description="Tender lamb chops marinated in rosemary and garlic, grilled to perfection."
-          />
-          <AccordionGallerySlide
-              src="/images/dish/chicken-chop.jpg"
-              title="Chicken Chop"
-              description="Traditional fried chicken chop with fries."
-          />
-          <AccordionGallerySlide
-              src="/images/dish/pork-burger.jpg"
-              title="Signature Pork Burger"
-              description="Our signature juicy pork burger grilled with a secret black pepper sauce."
-          />
-        </div>
+        <MqResponsive target="lg-">
+          <Swiper
+              tag="section"
+              containerModifierClass="signature-cards-"
+              :slides-per-view="1.4"
+              :space-between="14"
+              :centered-slides="true"
+              :centered-slides-bounds="true"
+              :center-insufficient-slides="true"
+              :grab-cursor="true"
+              :slides-offset-before="8"
+              :slides-offset-after="8"
+              :breakpoints="{
+                768: {
+                  slidesPerView: 1.6,
+                  slidesOffsetBefore: 0,
+                  slidesOffsetAfter: 0,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
+              }"
+              @afterInit="onSwiperAfterInit"
+              class="w-full landscape:h-[250px] portrait:h-[350px]"
+          >
+            <SwiperSlide
+                v-for="({ src, title, description }, key) in signatureDishes"
+                :key="key"
+            >
+              <AccordionGallerySlideMobile
+                  :src="src"
+                  :title="title"
+                  :description="description"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </MqResponsive>
+        <MqResponsive target="xl+">
+          <div class="flex gap-3 h-[800px]">
+            <AccordionGallerySlide
+                v-for="({ src, title, description }, key) in signatureDishes"
+                :key="key"
+                :src="src"
+                :title="title"
+                :description="description"
+            />
+          </div>
+        </MqResponsive>
       </section>
     </main>
   </div>
@@ -137,6 +158,7 @@
 
 <script setup>
 import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
+import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobile.vue';
 import FullscreenMenu from '~/components/FullscreenMenu.vue';
 import HeaderGallerySlide from '~/components/HeaderGallerySlide.vue';
 import TopNavigation from '~/components/TopNavigation.vue';
@@ -144,6 +166,39 @@ import TopNavigation from '~/components/TopNavigation.vue';
 import { useScrollLock, breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import throttle from 'lodash-es/throttle';
 import { gsap } from "gsap";
+import { MqResponsive } from "vue3-mq";
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper.min.css';
+
+// Signature Dishes
+const signatureDishes = [
+  {
+    src: '/images/dish/beef-tenderloin.jpg',
+    title: 'Beef Tenderloin',
+    description: 'Slow-smoked, spice-infused beef tenderloin, served with a sprinkle of salt and pepper on top of the natural flavor.',
+  },
+  {
+    src: '/images/dish/mushroom-pasta.jpg',
+    title: 'Mushroom Pasta',
+    description: 'Spaghetti noodles tossed with sautéed mushrooms, garlic, and onions in a rich cream sauce.',
+  },
+  {
+    src: '/images/dish/lamb-chop.jpg',
+    title: 'Rosemary Lamb',
+    description: 'Tender lamb chops marinated in rosemary and garlic, grilled to perfection.',
+  },
+  {
+    src: '/images/dish/chicken-chop.jpg',
+    title: 'Chicken Chop',
+    description: 'Traditional fried chicken chop with fries.',
+  },
+  {
+    src: '/images/dish/pork-burger.jpg',
+    title: 'Signature Pork Burger',
+    description: 'Our signature juicy pork burger grilled with a secret black pepper sauce.',
+  },
+];
 
 const isMobileMenuExpanded = ref(false);
 let mobileMenuAnimation;
@@ -212,6 +267,8 @@ const autoCloseMobileMenuOnResize = throttle(function () {
   }
 }, 80);
 
+
+
 onMounted(() => {
   window.addEventListener('resize', autoCloseMobileMenuOnResize);
 })
@@ -220,4 +277,17 @@ onUnmounted(() => {
   window.removeEventListener('resize', autoCloseMobileMenuOnResize);
 });
 
+
+
+function onSwiperAfterInit (swiper) {
+  // Disable swiper resize handler on ios
+  // Workaround ios bug
+  // @see https://github.com/nolimits4web/swiper/issues/5091
+  if (swiper.device.ios) {
+    swiper.resize.removeObserver();
+    window.removeEventListener(
+        'resize', swiper.resize.resizeHandler
+    );
+  }
+};
 </script>
