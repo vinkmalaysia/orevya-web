@@ -56,40 +56,41 @@
         <div class="h-px w-full bg-gray-300"></div>
       </div>
     </section>
-    <main class="grow min-w-0">
-      <!-- Small Gallery -->
-      <section class="relative h-[120px]">
-        <section class="grid grid-cols-4 h-full">
-          <HeaderGallerySlide src="/images/dish/ribeye.webp" />
-          <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
-          <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
-          <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
-        </section>
-        <div class="absolute h-full w-full bottom-0 pointer-events-none opacity-80" style="background: linear-gradient(0deg,
+    <section class="grow min-w-0">
+      <main>
+        <!-- Small Gallery -->
+        <section class="relative h-[120px]">
+          <section class="grid grid-cols-4 h-full">
+            <HeaderGallerySlide src="/images/dish/ribeye.webp" />
+            <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
+            <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
+            <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
+          </section>
+          <div class="absolute h-full w-full bottom-0 pointer-events-none opacity-80" style="background: linear-gradient(0deg,
           hsla(0, 0%, 100%, 1.0) 0%,
           hsla(0, 0%, 100%, 0.9) 30%,
           hsla(0, 0%, 100%, 0.60) 65%,
           hsla(0, 0%, 100%, 0.2) 91%,
           hsla(0, 0%, 100%, 0.1) 98.2%,
           hsla(0, 0%, 100%, 0) 100%);">
-        </div>
-      </section>
-      <!-- Signature Dish Accordion -->
-      <section>
-        <h1 class="text-6xl font-MrsSaintDelafield py-6 mt-12">Signature</h1>
-        <MqResponsive target="lg-">
-          <Swiper
-              tag="section"
-              containerModifierClass="signature-cards-"
-              :slides-per-view="1.2"
-              :space-between="12"
-              :centered-slides="true"
-              :centered-slides-bounds="true"
-              :center-insufficient-slides="true"
-              :grab-cursor="true"
-              :slides-offset-before="8"
-              :slides-offset-after="8"
-              :breakpoints="{
+          </div>
+        </section>
+        <!-- Signature Dish Accordion -->
+        <section>
+          <h1 class="text-6xl font-MrsSaintDelafield py-6 mt-12">Signature</h1>
+          <MqResponsive target="lg-">
+            <Swiper
+                tag="section"
+                containerModifierClass="signature-cards-"
+                :slides-per-view="1.2"
+                :space-between="12"
+                :centered-slides="true"
+                :centered-slides-bounds="true"
+                :center-insufficient-slides="true"
+                :grab-cursor="true"
+                :slides-offset-before="8"
+                :slides-offset-after="8"
+                :breakpoints="{
                 768: {
                   slidesPerView: 1.4,
                   slidesOffsetBefore: 0,
@@ -99,34 +100,35 @@
                   slidesPerView: 2.2,
                 },
               }"
-              @afterInit="onSwiperAfterInit"
-              class="w-full h-[350px] landscape:lg:h-[250px]"
-          >
-            <SwiperSlide
-                v-for="({ src, title, description }, key) in signatureDishes"
-                :key="key"
+                @afterInit="onSwiperAfterInit"
+                class="w-full h-[350px] landscape:lg:h-[250px]"
             >
-              <AccordionGallerySlideMobile
+              <SwiperSlide
+                  v-for="({ src, title, description }, key) in signatureDishes"
+                  :key="key"
+              >
+                <AccordionGallerySlideMobile
+                    :src="src"
+                    :title="title"
+                    :description="description"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </MqResponsive>
+          <MqResponsive target="xl+">
+            <div class="flex gap-3 h-[800px]">
+              <AccordionGallerySlide
+                  v-for="({ src, title, description }, key) in signatureDishes"
+                  :key="key"
                   :src="src"
                   :title="title"
                   :description="description"
               />
-            </SwiperSlide>
-          </Swiper>
-        </MqResponsive>
-        <MqResponsive target="xl+">
-          <div class="flex gap-3 h-[800px]">
-            <AccordionGallerySlide
-                v-for="({ src, title, description }, key) in signatureDishes"
-                :key="key"
-                :src="src"
-                :title="title"
-                :description="description"
-            />
-          </div>
-        </MqResponsive>
-      </section>
-    </main>
+            </div>
+          </MqResponsive>
+        </section>
+      </main>
+    </section>
   </div>
 </template>
 
