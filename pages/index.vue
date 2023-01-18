@@ -63,8 +63,8 @@
           <button class="relative overflow-hidden border-2 border-[#ba6900] text-[#ba6900] mx-3 px-12 py-4 uppercase font-bold text-sm after:content-[''] after:absolute after:bg-[#ba6900] after:right-0 after:bottom-0 after:h-[18px] after:w-[18px] hover:after:h-[24px] hover:after:w-[24px] after:transition-all after:rotate-45 after:translate-x-1/2 after:translate-y-1/2 font-Jost">Reserve</button>
         </a>
       </div>
-      <div class="my-24 flex justify-center">
-        <nav id="side-menu" class="text-neutral-800 font-Jost font-medium tracking-wide text-base">
+      <div class="my-24 flex ml-4">
+        <nav id="side-menu" class="text-neutral-800 font-Jost font-medium tracking-wide text-lg">
           <ul>
             <li class="[&:not(:last-child)]:mb-[25px]">
               <NuxtLink to="/menu" class="hover:text-neutral-400 transition-colors duration-300">Menu</NuxtLink>
@@ -84,14 +84,14 @@
     </section>
     <main class="grow min-w-0">
       <!-- Small Gallery -->
-      <section class="relative h-[250px]">
+      <section class="relative h-[120px]">
         <section class="grid grid-cols-4 h-full">
           <HeaderGallerySlide src="/images/dish/ribeye.webp" />
           <HeaderGallerySlide src="/images/dish/shrimps.jpg" />
           <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg" />
           <HeaderGallerySlide src="/images/dish/caesar-salad.jpg" />
         </section>
-        <div class="absolute h-full w-full bottom-0 pointer-events-none" style="background: linear-gradient(0deg,
+        <div class="absolute h-full w-full bottom-0 pointer-events-none opacity-80" style="background: linear-gradient(0deg,
           hsla(0, 0%, 100%, 1.0) 0%,
           hsla(0, 0%, 100%, 0.9) 30%,
           hsla(0, 0%, 100%, 0.60) 65%,
