@@ -143,6 +143,15 @@
               </template>
             </ClientOnly>
           </section>
+          <MqResponsive target="lg-">
+            <section class="my-8 grid grid-cols-2">
+              <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-16">
+                <h3 class="block font-Jost text-3xl text-[#64392b] font-bold uppercase">Find Us</h3>
+                <p class="block font-Jost text-neutral-400 text-xl text-center leading-6 my-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, magnam</p>
+              </section>
+              <iframe class="col-span-2 md:col-span-1 w-full h-[350px]" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
+            </section>
+          </MqResponsive>
         </main>
         <SiteFooter/>
       </section>

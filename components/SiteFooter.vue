@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#64392b] mt-24 py-8">
+  <footer class="bg-[#64392b] xl:mt-24 py-8">
     <section class="grid grid-cols-6 xl:grid-cols-4 gap-8 mx-8">
       <section class="hidden xl:block xl:col-span-1">
         <iframe class="w-full h-full" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
