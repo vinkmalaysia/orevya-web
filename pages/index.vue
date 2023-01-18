@@ -107,8 +107,8 @@
           <Swiper
               tag="section"
               containerModifierClass="signature-cards-"
-              :slides-per-view="1.4"
-              :space-between="14"
+              :slides-per-view="1.2"
+              :space-between="12"
               :centered-slides="true"
               :centered-slides-bounds="true"
               :center-insufficient-slides="true"
@@ -117,16 +117,16 @@
               :slides-offset-after="8"
               :breakpoints="{
                 768: {
-                  slidesPerView: 1.6,
+                  slidesPerView: 1.4,
                   slidesOffsetBefore: 0,
                   slidesOffsetAfter: 0,
                 },
                 1024: {
-                  slidesPerView: 2,
+                  slidesPerView: 2.2,
                 },
               }"
               @afterInit="onSwiperAfterInit"
-              class="w-full landscape:h-[250px] portrait:h-[350px]"
+              class="w-full h-[350px] landscape:lg:h-[250px]"
           >
             <SwiperSlide
                 v-for="({ src, title, description }, key) in signatureDishes"
