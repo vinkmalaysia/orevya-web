@@ -134,9 +134,6 @@
 
 <style>
 :root {
-  /* Fonts */
-  --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
   /* Colors */
   --color-primary: #895a4a;
 
