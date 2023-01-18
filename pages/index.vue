@@ -1,30 +1,4 @@
 <template>
-  <Style type="text/css">
-    :root {
-      --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      --zindex-fullscreen-menu: 5000;
-      --zindex-topnav: 5001;
-    }
-
-    body {
-      --scrollbar-foreground: #6a5841;
-      --scrollbar-background: #f3f4f6;
-      scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--scrollbar-foreground);
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--scrollbar-background);
-    }
-  </Style>
   <FullscreenMenu />
   <TopNavigation :expanded="isMobileMenuExpanded" @click="toggleMobileMenu" />
   <div class="flex w-full max-lg:mt-14">
@@ -60,7 +34,7 @@
       </div>
       <div class="flex justify-center">
         <a href="https://www.opentable.com/r/oreyva-kuala-lumpur">
-          <button class="relative overflow-hidden border-2 border-[#ba6900] text-[#ba6900] mx-3 px-12 py-4 uppercase font-bold text-sm after:content-[''] after:absolute after:bg-[#ba6900] after:right-0 after:bottom-0 after:h-[18px] after:w-[18px] hover:after:h-[24px] hover:after:w-[24px] after:transition-all after:rotate-45 after:translate-x-1/2 after:translate-y-1/2 font-Jost">Reserve</button>
+          <button class="relative overflow-hidden border-2 border-[var(--color-primary)] text-[var(--color-primary)] mx-3 px-12 py-4 uppercase font-bold text-sm after:content-[''] after:absolute after:bg-[var(--color-primary)] after:right-0 after:bottom-0 after:h-[18px] after:w-[18px] hover:after:h-[24px] hover:after:w-[24px] after:transition-all after:rotate-45 after:translate-x-1/2 after:translate-y-1/2 font-Jost">Reserve</button>
         </a>
       </div>
       <div class="my-24 flex ml-4">
@@ -155,6 +129,39 @@
     </main>
   </div>
 </template>
+
+<style>
+:root {
+  /* Fonts */
+  --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Colors */
+  --color-primary: #895a4a;
+
+  /* Global z-index */
+  --zindex-fullscreen-menu: 5000;
+  --zindex-topnav: 5001;
+}
+
+body {
+  --scrollbar-foreground: #6a5841;
+  --scrollbar-background: #f3f4f6;
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-foreground);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
+</style>
 
 <script setup>
 import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
