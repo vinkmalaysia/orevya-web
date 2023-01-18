@@ -28,7 +28,7 @@
   <FullscreenMenu />
   <TopNavigation :expanded="isMobileMenuExpanded" @click="toggleMobileMenu" />
   <div class="flex w-full max-lg:mt-14">
-    <section class="max-lg:hidden sticky top-0 h-full px-10">
+    <section class="max-lg:hidden sticky top-0 bottom-0 px-10">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
           <svg class="m-auto block" viewBox="0 0 100 19" height="32">
