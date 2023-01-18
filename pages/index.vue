@@ -144,6 +144,7 @@
             </ClientOnly>
           </section>
         </main>
+        <SiteFooter/>
       </section>
     </div>
   </div>
@@ -155,6 +156,7 @@ import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobil
 import FullscreenMenu from '~/components/FullscreenMenu.vue';
 import HeaderGallerySlide from '~/components/HeaderGallerySlide.vue';
 import TopNavigation from '~/components/TopNavigation.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
 
 import { useScrollLock, breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import throttle from 'lodash-es/throttle';
