@@ -214,25 +214,11 @@ let viewportScrollLocked;
 if (typeof window !== 'undefined') {
   // Set scroll lock target
   viewportScrollLocked = useScrollLock(document.documentElement);
-
-  // Define mobile menu transition animation
-  mobileMenuAnimation = gsap.timeline({ reversed: true })
-      .from("#fullscreen-menu-wrapper", {
-        autoAlpha: 0,
-        duration: 0.7,
-        y: -500,
-        ease: "power4.out",
-      })
-      .from("#fullscreen-menu-wrapper > nav > ul > a", {
-        duration: .9,
-        opacity: 0,
-        y: 30,
-        stagger: 0.2,
-        ease: 'expo.inOut',
-      }, "-=.75");
 }
 
-
+watch(isMobileMenuExpanded, (isVisible) => {
+  mobileMenuAnimation.tweenTo(isVisible ? "visible" : "hidden");
+})
 
 
 /* Mobile menu toggle */
@@ -246,16 +232,13 @@ function setMenuVisibility(visible) {
   }
 
   // Set menu transition animation to play forward/backward
-  mobileMenuAnimation.reversed(!visible);
+  mobileMenuAnimation.play();
 }
 
 function toggleMobileMenu () {
   const isVisible = !isMobileMenuExpanded.value;
   setMenuVisibility(isVisible);
 }
-
-
-
 
 /* Close mobile menu when window resized/expanded */
 const breakpoints = useBreakpoints(breakpointsTailwind);
@@ -269,21 +252,42 @@ const autoCloseMobileMenuOnResize = throttle(function () {
     setMenuVisibility(false);
 
     // Reset animation to start position
-    mobileMenuAnimation.reversed(true).seek(0);
+    mobileMenuAnimation.seek("hidden").pause();
   }
 }, 80);
 
-
-
 onMounted(() => {
   window.addEventListener('resize', autoCloseMobileMenuOnResize);
+
+  // Define mobile menu transition animation
+  mobileMenuAnimation = gsap.timeline({ paused: true })
+      .addLabel("hidden", 0)
+      .fromTo("#fullscreen-menu-wrapper", {
+        autoAlpha: 0,
+        y: -500,
+      }, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "power4.out",
+      })
+      .fromTo("#fullscreen-menu-wrapper > nav > ul > a", {
+        autoAlpha: 0,
+        y: 30,
+      }, {
+        autoAlpha: 1,
+        y: 0,
+        duration: .9,
+        stagger: 0.2,
+        ease: 'expo.inOut',
+      }, "-=.75")
+      .addLabel("visible", 0)
+      .seek(isMobileMenuExpanded.value ? "visible" : "hidden");
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', autoCloseMobileMenuOnResize);
 });
-
-
 
 function onSwiperAfterInit (swiper) {
   // Disable swiper resize handler on ios
