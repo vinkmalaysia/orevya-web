@@ -2,7 +2,7 @@
   <div>
     <FullscreenMenu/>
     <TopNavigation :expanded="isMobileMenuExpanded" @click="toggleMobileMenu"/>
-    <div class="flex w-full max-lg:mt-14" style="--bg-color: white;">
+    <div class="flex w-full" style="--bg-color: white;">
       <section class="max-lg:hidden sticky top-0 bottom-0 px-10 bg-[var(--bg-color)]">
         <div class="flex justify-center">
           <div class="inline-block pt-8 text-center">
@@ -57,7 +57,7 @@
           <div class="h-px w-full bg-gray-300"></div>
         </div>
       </section>
-      <section class="grow min-w-0">
+      <section class="grow min-w-0 max-lg:mt-14">
         <main>
           <!-- Small Gallery -->
           <section class="relative h-[120px]">
