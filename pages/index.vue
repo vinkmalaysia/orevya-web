@@ -80,7 +80,7 @@
           <section>
             <div class="py-6 mt-12 text-center">
               <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
-              <h2 class="font-Jost text-4xl text-[#6c2d39] font-bold uppercase -translate-y-6" style="">OUR MENU</h2>
+              <h2 class="font-Jost text-4xl xl:text-[4rem] text-[#6c2d39] font-bold uppercase -translate-y-6" style="">OUR MENU</h2>
             </div>
             <ClientOnly fallback-tag="section">
               <MqResponsive group>
