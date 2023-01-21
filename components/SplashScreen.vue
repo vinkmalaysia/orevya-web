@@ -2,7 +2,7 @@
   <section id="splash-screen" class="grid fixed inset-0 bg-white justify-center items-center z-[var(--zindex-splash-screen)]">
     <div>
       <div class="logo">
-        <svg class="m-auto" viewBox="0 0 100 19" height="32">
+        <svg class="m-auto h-4 md:h-8" viewBox="0 0 100 19">
           <defs>
             <linearGradient id="logo-gradient" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
               <stop stop-color="#ba6900" offset="0%"/>
@@ -26,14 +26,15 @@
 
 <style scoped>
 .progress-bar {
-  width: 14vw;
-  min-width: 200px;
-  height: 4px;
-  border-radius: 4px;
+  @apply w-[8vw] min-w-[200px] h-[2px] rounded-full;
   margin: 2rem 0;
   background: linear-gradient(90deg, rgba(186,105,0,1) 0%, rgba(218,208,180,1) 30%, rgba(226,226,226,1) 50%, rgba(218,208,180,1) 70%, rgba(186,105,0,1) 100%);
   background-size: 200% auto;
   animation: loop 2s linear infinite;
+
+  @screen md  {
+    @apply h-[4px] rounded-full;
+  }
 }
 
 @keyframes loop {
