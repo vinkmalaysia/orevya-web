@@ -51,16 +51,19 @@ const nuxtApp = useNuxtApp();
 
 // App load complete
 nuxtApp.hook("page:finish", function () {
-  // Animate hide splash screen
-  gsap.to('#splash-screen .logo svg', { autoAlpha: 0, y: -10, duration: 0.8 });
-  gsap.to('#splash-screen .progress-bar', { autoAlpha: 0, scaleX: 3, duration: 1 });
-  gsap.to('#splash-screen', { autoAlpha: 0, y: -60, duration: 1, delay: 0.1 })
-      .then(() => {
-        // Hide splash screen when animation complete
-        showSplashScreen.value = false;
-      });
+  // Delay 1 second for custom fonts to load
+  setTimeout(function () {
+    // Animate hide splash screen
+    gsap.to('#splash-screen .logo svg', { autoAlpha: 0, y: -10, duration: 0.8 });
+    gsap.to('#splash-screen .progress-bar', { autoAlpha: 0, scaleX: 3, duration: 1 });
+    gsap.to('#splash-screen', { autoAlpha: 0, duration: 1, delay: 0.1 })
+        .then(() => {
+          // Hide splash screen when animation complete
+          showSplashScreen.value = false;
+        });
 
-  // Show and enable scrolling
-  document.body.classList.add("loaded");
+    // Show and enable scrolling
+    document.body.classList.add("loaded");
+  }, 600);
 });
 </script>
