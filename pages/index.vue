@@ -80,7 +80,7 @@
           <section>
             <div class="py-6 mt-12 text-center">
               <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
-              <h2 class="font-Jost text-4xl text-[#64392b] font-bold uppercase -translate-y-6" style="">OUR MENU</h2>
+              <h2 class="font-Jost text-4xl text-[#6c2d39] font-bold uppercase -translate-y-6" style="">OUR MENU</h2>
             </div>
             <ClientOnly fallback-tag="section">
               <MqResponsive group>
@@ -147,9 +147,9 @@
             </ClientOnly>
           </section>
           <MqResponsive target="lg-">
-            <section class="my-8 grid grid-cols-2">
-              <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-16">
-                <h3 class="block font-Jost text-4xl text-[#64392b] font-bold uppercase">Find Us</h3>
+            <section class="my-8 md:m-12 md:my-32 grid grid-cols-2">
+              <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-12">
+                <h3 class="block font-Jost text-4xl text-[#6c2d39] font-bold uppercase">Find Us</h3>
                 <p class="block font-Jost text-neutral-400 text-xl text-center leading-6 my-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, magnam</p>
               </section>
               <iframe class="col-span-2 md:col-span-1 w-full h-[350px]" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
