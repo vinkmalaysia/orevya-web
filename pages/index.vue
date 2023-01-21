@@ -91,8 +91,8 @@
                       :centered-slides-bounds="true"
                       :center-insufficient-slides="true"
                       :grab-cursor="true"
-                      :slides-offset-before="8"
-                      :slides-offset-after="8"
+                      :slides-offset-before="12"
+                      :slides-offset-after="12"
                       :breakpoints="{
                 768: {
                   slidesPerView: 1.4,
