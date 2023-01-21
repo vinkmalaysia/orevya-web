@@ -1,10 +1,10 @@
 <template>
-  <footer class="bg-[#64392b] xl:mt-24 py-8">
-    <section class="grid grid-cols-6 xl:grid-cols-4 gap-8 mx-8">
-      <section class="hidden xl:block xl:col-span-1">
+  <footer class="bg-[#64392b] xl:mt-24 pt-16 py-8">
+    <section class="grid grid-cols-6 gap-8 mx-8">
+      <section class="hidden xl:block col-span-3 row-span-2">
         <iframe class="w-full h-full" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
       </section>
-      <section class="mt-8 md:mr-8 col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2">
+      <section class="col-span-6 md:col-span-2 lg:col-span-6 xl:col-span-3">
         <!-- Reservation -->
         <div>
           <button class="relative overflow-hidden isolate transition-colors rounded-full border-2 border-[#D2B48C] px-6 py-4 mb-8 font-Jost text-sm md:text-md text-[#D2B48C] hover:text-[#64392b] font-bold uppercase before:absolute before:block before:content-[''] before:bg-[#D2B48C] before:top-0 before:left-0 before:w-full before:h-0 hover:before:h-full before:transition-all before:duration-200 z-10 before:-z-10">Reservation</button>
@@ -37,7 +37,7 @@
             </li>
             <li class="inline-block mx-1">
               <a href="#" aria-label="Contact Us via WhatsApp" v-tippy="{ content: 'Whatsapp', delay: 100}">
-                <svg class="transition-[fill] fill-[#a2846d] hover:fill-white/80 cursor-pointer w-[36px] h-[36px] md:w-[48px] md:h-[48px]" viewBox="0 0 50 50">
+                <svg class="transition-[fill] fill-[#a2846d] hover:fill-white/80 cursor-pointer w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]" viewBox="0 0 50 50">
                   <path d="M25.1 46.1C21.4 46.1 17.8 45.1 14.6 43.3L3.99999 46.1L6.89999 35.9C4.89999 32.6 3.79999 28.8 3.79999 24.9C3.79999 13.2 13.3 3.7 25 3.7C36.7 3.7 46.3 13.2 46.3 24.9C46.3 36.6 36.8 46.1 25.1 46.1ZM14.9 41.2L15.3 41.4C18.3 43.2 21.7 44.1 25.1 44.1C35.7 44.1 44.4 35.5 44.4 24.9C44.4 14.3 35.8 5.7 25.1 5.7C14.5 5.7 5.89999 14.3 5.89999 24.9C5.89999 28.5 6.89999 32.1 8.89999 35.2L9.09999 35.6L6.89999 43.3L14.9 41.2Z"/>
                   <path d="M35.5 30.4C35.4 30.3 35.3 30.3 35.1 30.2C33.8 29.6 31.6 28.5 30.8 28.2C30.4 28.7 29.5 29.8 29.1 30.4C24.9 29.3 21.1 26.4 19 22.5C19.1 22.3 19.3 22.1 19.4 22C19.6 21.7 19.9 21.5 20.1 21.2C20.2 21.1 20.6 20.5 20.6 20.4C20.6 20.3 20.6 20.2 20.6 20.1C20.6 20 20.3 19.5 20.3 19.3C20.2 19 20.1 18.7 20 18.5C19.8 18.1 19.7 17.7 19.5 17.4C19.3 17 18.8 15.6 18.6 15.4C18.2 15.4 17.7 15.4 17.3 15.4C17 15.4 16.7 15.5 16.5 15.8C15.3 16.9 14.7 18.3 14.7 19.9C14.9 21.8 15.6 23.7 16.8 25.2C16.8 25.2 19.4 28.1 22.1 30.6C24.3 32.3 26.8 33.8 29.4 34.6C29.9 34.7 30.4 34.8 31 34.8C31.4 34.8 31.8 34.8 32.1 34.7C33.5 34.4 34.6 33.6 35.3 32.5C35.5 31.8 35.6 31.1 35.5 30.4Z"/>
                 </svg>
@@ -48,7 +48,7 @@
       </section>
 
       <!-- Hours -->
-      <section class="col-span-3 md:col-span-2 lg:col-span-2 xl:col-span-1 xl:row-start-2 mt-8 font-Jost text-[#D2B48C]">
+      <section class="col-span-3 md:col-span-2 xl:col-span-1 font-Jost text-[#D2B48C]">
         <h3 class="font-medium text-md md:text-lg text-[#b77e4d] border-b border-[#b77e4d] mb-3 uppercase xl:max-w-[250px]">Kitchen Hours</h3>
         <div>
           <p class="font-bold">Monday to Friday</p>
@@ -68,7 +68,7 @@
       </section>
 
       <!--  Contact  -->
-      <section class="col-span-3 md:col-span-2 lg:col-span-2 xl:col-span-1 xl:row-start-2 xl:col-start-1 mt-8 font-Jost text-[#D2B48C]">
+      <section class="col-span-3 md:col-span-2 xl:col-span-2 font-Jost text-[#D2B48C]">
         <h3 class="font-medium text-md md:text-lg text-[#b77e4d] border-b border-[#b77e4d] mb-3 uppercase xl:max-w-[250px]">Contact</h3>
         <p class="leading-tight">D-H-2 Plaza Arkadia, 6, Jalan Intisari, Desa Parkcity, 52200 Kuala Lumpur</p>
         <p class="mt-4 leading-tight">contact@orevya.com</p>
