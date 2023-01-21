@@ -78,7 +78,10 @@
           </section>
           <!-- Signature Dish Accordion -->
           <section>
-            <h1 class="text-6xl font-MrsSaintDelafield py-6 mt-12">Signature</h1>
+            <div class="py-6 mt-12 text-center">
+              <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
+              <h2 class="font-Jost text-4xl text-[#64392b] font-bold uppercase -translate-y-6" style="">OUR MENU</h2>
+            </div>
             <ClientOnly fallback-tag="section">
               <MqResponsive group>
                 <template #lg->
