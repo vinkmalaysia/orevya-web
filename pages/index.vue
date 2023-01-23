@@ -57,7 +57,9 @@
           <div class="h-px w-full bg-gray-300"></div>
         </div>
       </section>
-      <section class="grow max-w-full max-lg:mt-14">
+      <!-- min-w-0 needed for swiper.js -->
+      <!-- https://github.com/nolimits4web/swiper/issues/3599 -->
+      <section class="grow min-w-0 max-lg:mt-14">
         <main>
           <!-- Small Gallery -->
           <section class="relative h-[120px]">
