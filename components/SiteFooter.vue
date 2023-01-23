@@ -1,10 +1,10 @@
 <template>
-  <footer class="bg-[#64392b] xl:mt-24 pt-16 py-8">
-    <section class="grid grid-cols-6 gap-8 mx-8">
-      <section class="hidden xl:block col-span-3 row-span-2 rounded-xl overflow-hidden">
+  <footer class="bg-[#64392b] xl:mt-24 pt-16 py-8 px-8">
+    <section class="grid grid-cols-12 gap-2 md:gap-8">
+      <section class="hidden xl:block row-span-2 col-span-6 rounded-xl overflow-hidden">
         <iframe class="w-full h-full" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
       </section>
-      <section class="col-span-6 md:col-span-2 lg:col-span-6 xl:col-span-3">
+      <section class="col-span-12 md:col-span-4 xl:col-span-6">
         <!-- Reservation -->
         <div>
           <button class="relative overflow-hidden isolate transition-colors rounded-full border-2 border-[#D2B48C] px-6 py-4 mb-8 font-Jost text-sm md:text-md text-[#D2B48C] hover:text-[#64392b] font-bold uppercase before:absolute before:block before:content-[''] before:bg-[#D2B48C] before:top-0 before:left-0 before:w-full before:h-0 hover:before:h-full before:transition-all before:duration-200 z-10 before:-z-10">Reservation</button>
@@ -48,7 +48,7 @@
       </section>
 
       <!-- Hours -->
-      <section class="col-span-3 md:col-span-2 xl:col-span-1 font-Jost text-[#D2B48C]">
+      <section class="col-span-6 md:col-span-4 lg:col-span-3 2xl:col-span-2 font-Jost text-[#D2B48C]">
         <h3 class="font-medium text-md md:text-lg text-[#b77e4d] border-b border-[#b77e4d] mb-3 uppercase xl:max-w-[250px]">Kitchen Hours</h3>
         <div>
           <p class="font-bold">Monday to Friday</p>
@@ -68,7 +68,7 @@
       </section>
 
       <!--  Contact  -->
-      <section class="col-span-3 md:col-span-2 xl:col-span-2 font-Jost text-[#D2B48C]">
+      <section class="col-span-6 md:col-span-4 lg:col-span-3 2xl:col-span-2 font-Jost text-[#D2B48C]">
         <h3 class="font-medium text-md md:text-lg text-[#b77e4d] border-b border-[#b77e4d] mb-3 uppercase xl:max-w-[250px]">Contact</h3>
         <p class="leading-tight">D-H-2 Plaza Arkadia, 6, Jalan Intisari, Desa Parkcity, 52200 Kuala Lumpur</p>
         <p class="mt-4 leading-tight">contact@orevya.com</p>
@@ -77,7 +77,7 @@
     </section>
 
     <!-- Disclaimer -->
-    <div class="mx-8 mt-8">
+    <div class="mt-8">
       <span>
         <NuxtLink to="/terms" class="[&:not(:first-child)]:ml-3 px-2 py-0.5 rounded-full border border-[#b77e4d] hover:border-[#e1a16a] align-middle text-[#b77e4d] hover:text-[#e1a16a]">Terms</NuxtLink>
         <NuxtLink to="/privacy" class="[&:not(:first-child)]:ml-3 px-2 py-0.5 rounded-full border border-[#b77e4d] hover:border-[#e1a16a] align-middle text-[#b77e4d] hover:text-[#e1a16a]">Privacy Policy</NuxtLink>
