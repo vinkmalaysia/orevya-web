@@ -80,9 +80,20 @@
           </section>
           <!-- Signature Dish Accordion -->
           <section>
-            <div class="py-6 mt-12 text-center">
+            <div class="pt-6 mt-12 text-center">
               <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
               <h2 class="font-Jost text-4xl xl:text-[4rem] text-[#6c2d39] font-medium xl:font-normal uppercase -translate-y-6" style="">OUR MENU</h2>
+            </div>
+            <div class="text-center py-3 mb-12">
+              <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-300 mx-auto">
+                <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
+                <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
+                <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
+                <path d="M38.26,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+                <path d="M100.43,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+                <path d="M64.91,1.66c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+                <path d="M33.82,1.88H1.38c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3H33.82c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
+              </svg>
             </div>
             <ClientOnly fallback-tag="section">
               <MqResponsive group>
