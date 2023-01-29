@@ -1,6 +1,6 @@
 <template>
+  <SplashScreen v-if="showSplashScreen" />
   <NuxtLayout>
-    <SplashScreen v-if="showSplashScreen" />
     <NuxtPage/>
   </NuxtLayout>
 </template>
