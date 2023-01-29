@@ -49,8 +49,8 @@ const showSplashScreen = ref(true);
 
 const nuxtApp = useNuxtApp();
 
-// App load complete
-nuxtApp.hook("page:finish", function () {
+// App mount complete
+nuxtApp.hook("app:mounted", function () {
   // Delay 1 second for custom fonts to load
   setTimeout(function () {
     // Animate hide splash screen
