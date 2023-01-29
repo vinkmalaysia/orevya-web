@@ -11,7 +11,7 @@
         </div>
 
         <!-- Follow us   -->
-        <section>
+        <section class="mb-2">
           <ul>
             <li class="inline-block mx-1 ml-0">
               <a href="https://www.instagram.com/oreyva_kl" aria-label="Follow Us on Instagram" v-tippy="{ content: 'Instagram', delay: 100}">
