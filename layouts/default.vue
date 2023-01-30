@@ -5,7 +5,7 @@
     <section class="max-lg:hidden h-full sticky top-0 bottom-0 px-10 bg-[var(--bg-color)]">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
-          <NuxtLink to="/">
+          <a href="/">
             <svg class="m-auto block" viewBox="0 0 100 19" height="32">
               <defs>
                 <linearGradient id="logo-gradient" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
@@ -23,7 +23,7 @@
               </g>
             </svg>
             <span class="block text-[0.7rem] tracking-[0.4rem] pt-1 -mr-[0.4rem] font-Jost font-bold text-[#835600]">KUALA LUMPUR</span>
-          </NuxtLink>
+          </a>
         </div>
       </div>
       <div class="pb-8">
