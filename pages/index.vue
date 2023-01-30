@@ -21,7 +21,7 @@
     <section>
       <div class="pt-6 mt-12 text-center">
         <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
-        <h2 class="font-Jost text-4xl xl:text-[4rem] text-[#6c2d39] font-medium xl:font-normal uppercase -translate-y-6" style="">OUR MENU</h2>
+        <h2 class="font-Jost text-4xl xl:text-[4rem] text-[var(--color-primary)] font-medium xl:font-normal uppercase -translate-y-6" style="">OUR MENU</h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-300 mx-auto">
@@ -101,7 +101,7 @@
     <MqResponsive target="lg-">
       <section class="my-8 md:m-12 md:my-32 grid grid-cols-2">
         <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-12">
-          <h3 class="block font-Jost text-4xl text-[#6c2d39] font-bold uppercase">Find Us</h3>
+          <h3 class="block font-Jost text-4xl text-[var(--color-primary)] font-bold uppercase">Find Us</h3>
           <div class="py-6">
             <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-300">
               <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
@@ -115,7 +115,7 @@
           </div>
           <div class="font-Jost text-xl text-center leading-6 my-6">
             <div>
-              <p class="text-[#6c2d39] font-bold">Monday to Friday</p>
+              <p class="text-[var(--color-primary)] font-bold">Monday to Friday</p>
               <p class="text-neutral-400">
                 <time datetime="17:30">5:30pm</time>
                 -
@@ -123,7 +123,7 @@
               </p>
             </div>
             <div class="mt-3">
-              <p class="text-[#6c2d39] font-bold">Saturday - Sunday</p>
+              <p class="text-[var(--color-primary)] font-bold">Saturday - Sunday</p>
               <p class="text-neutral-400">
                 <time datetime="11:30">11:30am</time>
                 -
