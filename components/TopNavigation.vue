@@ -1,7 +1,7 @@
 <template>
-  <section id="mobile-nav" class="py-4 w-full lg:hidden bg-white fixed top-0" style="z-index: var(--zindex-topnav);">
-    <NuxtLink to="/">
-      <svg class="mx-auto block" viewBox="0 0 100 19" height="24">
+  <section id="mobile-nav" class="text-center py-4 w-full lg:hidden bg-white fixed top-0" style="z-index: var(--zindex-topnav);">
+    <a href="/" class="inline-block mx-auto">
+      <svg class="inline-block" viewBox="0 0 100 19" height="24">
         <defs>
           <linearGradient id="logo-gradient-mobile" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
             <stop stop-color="#ba6900" offset="0%"/>
@@ -17,7 +17,7 @@
           <path d="M17.82,7.21c-.1-.45-.25-.88-.42-1.31-.45-1.07-1.08-2-1.9-2.78s-1.77-1.39-2.87-1.81c-.88-.34-1.81-.54-2.75-.61-.28-.02-.56-.03-.84-.03-.88,0-1.77,.11-2.62,.33-.32,.09-.64,.19-.95,.31-1.1,.42-2.06,1.03-2.88,1.81-.82,.78-1.45,1.71-1.91,2.78C.33,6.75,.11,7.65,.04,8.56,.01,8.86,0,9.16,0,9.46c0,.8,.09,1.59,.27,2.36,.1,.41,.23,.82,.39,1.21,.44,1.09,1.06,2.03,1.87,2.83,.81,.8,1.76,1.42,2.87,1.86,.85,.33,1.75,.54,2.66,.62,.33,.03,.66,.04,.99,.04,1.31,0,2.52-.22,3.62-.66,1.1-.44,2.06-1.06,2.87-1.86,.81-.8,1.43-1.74,1.87-2.83,.35-.88,.56-1.8,.63-2.74,.02-.28,.03-.56,.03-.84,0-.76-.08-1.51-.25-2.24Zm-4.63,4.87c-.39,.76-.94,1.36-1.66,1.79-.55,.33-1.16,.54-1.8,.61-.23,.03-.46,.04-.69,.04-.44,0-.88-.05-1.31-.15-.42-.1-.83-.27-1.2-.5-.71-.43-1.26-1.03-1.66-1.79-.27-.53-.45-1.1-.53-1.69-.04-.31-.06-.62-.06-.94,0-.99,.2-1.87,.59-2.63,.39-.76,.94-1.36,1.66-1.79,.52-.31,1.1-.52,1.71-.59,.27-.04,.53-.05,.8-.05,.42,0,.84,.04,1.24,.13,.45,.1,.88,.27,1.28,.52,.7,.43,1.25,1.03,1.63,1.79,.26,.52,.43,1.07,.51,1.65,.05,.33,.07,.65,.07,.98,0,.99-.2,1.87-.59,2.63Z"/>
         </g>
       </svg>
-    </NuxtLink>
+    </a>
     <div class="absolute top-0 right-0 w-10 h-10 m-2">
       <button class="rounded-full h-full w-full" @click="$emit('click')" :aria-expanded="expanded" aria-label="Mobile Menu" aria-controls="mobile-nav">
         <svg viewBox="0 0 512 512" width="24" height="24" aria-hidden="true" class="mx-auto text-neutral-600 transition-transform" :class="{'rotate-180': expanded}">
