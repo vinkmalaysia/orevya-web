@@ -19,7 +19,7 @@
       </svg>
     </a>
     <div class="absolute top-0 right-0 w-10 h-10 m-2">
-      <button class="rounded-full h-full w-full" @click="$emit('click')" :aria-expanded="expanded" aria-label="Mobile Menu" aria-controls="mobile-nav">
+      <button class="rounded-full h-full w-full" @click="$emit('toggle')" :aria-expanded="expanded" aria-label="Mobile Menu" aria-controls="mobile-nav">
         <svg viewBox="0 0 512 512" width="24" height="24" aria-hidden="true" class="mx-auto text-neutral-600 transition-transform" :class="{'rotate-180': expanded}">
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 200l144 160 144-160"/>
         </svg>
@@ -34,6 +34,6 @@ defineProps([
 ]);
 
 defineEmits([
-  'click',
+  'toggle',
 ])
 </script>
