@@ -52,9 +52,7 @@
         <div class="h-px w-full bg-gray-300"></div>
       </div>
     </section>
-    <section class="grow min-w-0">
-      <!-- min-w-0 needed for swiper.js -->
-      <!-- @see https://github.com/nolimits4web/swiper/issues/3599 -->
+    <section class="grow">
       <slot />
       <SiteFooter/>
     </section>

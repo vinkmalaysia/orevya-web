@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full">
+  <main>
     <!-- Small Gallery -->
     <section class="relative h-[120px]">
       <section class="grid grid-cols-4 h-full">
@@ -39,7 +39,6 @@
           <template #lg->
             <Swiper
               tag="section"
-              containerModifierClass="signature-cards-"
               :slides-per-view="1.2"
               :space-between="12"
               :centered-slides="true"
@@ -59,8 +58,10 @@
                 },
               }"
               @afterInit="onSwiperAfterInit"
-              class="w-full h-[350px] landscape:lg:h-[250px]"
+              class="h-[350px] w-0 min-w-full landscape:lg:h-[250px]"
             >
+              <!-- min-w-0 bug for swiper.js -->
+              <!-- @see https://github.com/nolimits4web/swiper/issues/3599 -->
               <SwiperSlide
                 v-for="({ src, title, description }, key) in signatureDishes"
                 :key="key"
