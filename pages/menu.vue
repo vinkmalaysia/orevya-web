@@ -68,7 +68,7 @@
 
 <style scoped>
 .menu-section {
-  @apply text-center font-Jost text-lg mx-4 md:mx-24 xl:mx-48 2xl:mx-0 mb-6 py-24 px-24 2xl:px-28;
+  @apply text-center font-Jost text-lg mx-4 md:mx-24 xl:mx-48 2xl:mx-0 mb-6 py-24 2xl:px-28;
   background-image: radial-gradient(circle at center 20%, #263932, #2f1b1b);
 }
 
@@ -81,6 +81,6 @@
 }
 
 .menu-list li {
-  @apply py-3 text-xl text-white/80;
+  @apply py-3 text-base md:text-xl text-white/80;
 }
 </style>
