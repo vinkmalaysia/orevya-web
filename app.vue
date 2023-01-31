@@ -9,6 +9,7 @@
 :root {
   /* Colors */
   --color-primary: #895a4a;
+  --color-secondary: #252C2A;
 
   /* Global z-index */
   --zindex-splash-screen: 999999;

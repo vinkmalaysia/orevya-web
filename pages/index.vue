@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="max-lg:mt-14 pb-12">
     <!-- Small Gallery -->
     <section class="relative h-[120px]">
       <section class="grid grid-cols-4 h-full">
@@ -21,10 +21,10 @@
     <section>
       <div class="pt-6 mt-12 text-center">
         <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
-        <h2 class="font-Jost text-4xl xl:text-[4rem] text-[var(--color-primary)] font-medium xl:font-normal uppercase -translate-y-6" style="">OUR MENU</h2>
+        <h2 class="font-Jost text-4xl xl:text-[4rem] text-[var(--color-secondary)] font-bold xl:font-medium uppercase -translate-y-6" style="">OUR MENU</h2>
       </div>
       <div class="text-center py-3 mb-12">
-        <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-300 mx-auto">
+        <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-100 mx-auto">
           <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
           <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
           <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
@@ -102,9 +102,9 @@
     <MqResponsive target="lg-">
       <section class="my-8 md:m-12 md:my-32 grid grid-cols-2">
         <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-12">
-          <h3 class="block font-Jost text-4xl text-[var(--color-primary)] font-bold uppercase">Find Us</h3>
+          <h3 class="block font-Jost text-4xl text-[var(--color-secondary)] font-bold uppercase">Find Us</h3>
           <div class="py-6">
-            <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-300">
+            <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200">
               <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
               <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
               <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>

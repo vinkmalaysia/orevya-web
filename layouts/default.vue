@@ -1,7 +1,7 @@
 <template>
   <FullscreenMenu @linkClick="setMenuVisibility(false)"/>
   <TopNavigation :expanded="isMobileMenuExpanded" @toggle="setMenuVisibility(!isMobileMenuExpanded)"/>
-  <div class="flex max-lg:mt-14" style="--bg-color: white;" v-bind="$attrs">
+  <div class="flex" style="--bg-color: white;" v-bind="$attrs">
     <section class="max-lg:hidden h-full sticky top-0 bottom-0 px-10 bg-[var(--bg-color)]">
       <div class="flex justify-center">
         <div class="inline-block pt-8 text-center">
@@ -40,7 +40,7 @@
         </a>
       </div>
       <div class="my-24 flex ml-4">
-        <nav id="side-menu" class="text-neutral-800 font-Jost font-medium tracking-wide text-lg">
+        <nav id="side-menu" class="text-[var(--color-secondary)] font-Jost font-medium tracking-wide text-lg">
           <ul>
             <li v-for="item in sideMenuItems" class="[&:not(:last-child)]:mb-[25px]">
               <NuxtLink :to="item.to" class="hover:text-neutral-400 transition-colors duration-300">{{ item.title }}</NuxtLink>
