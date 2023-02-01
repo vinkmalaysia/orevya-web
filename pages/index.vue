@@ -98,6 +98,11 @@
           </div>
         </template>
       </ClientOnly>
+      <div class="text-center mt-8 xl:my-16">
+        <NuxtLink to="/menu">
+          <button class="font-Jost sm:text-xl uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
+        </NuxtLink>
+      </div>
     </section>
     <MqResponsive target="lg-">
       <section class="my-8 md:m-12 md:my-32 grid grid-cols-2">
