@@ -37,7 +37,7 @@
       <ClientOnly>
         <MqResponsive group>
           <template #lg->
-            <Swiper
+            <swiper-container
               tag="section"
               :slides-per-view="1.2"
               :space-between="12"
@@ -62,7 +62,7 @@
             >
               <!-- min-w-0 bug for swiper.js -->
               <!-- @see https://github.com/nolimits4web/swiper/issues/3599 -->
-              <SwiperSlide
+              <swiper-slide
                 v-for="({ src, title, description }, key) in signatureDishes"
                 :key="key"
               >
@@ -71,8 +71,8 @@
                   :title="title"
                   :description="description"
                 />
-              </SwiperSlide>
-            </Swiper>
+              </swiper-slide>
+            </swiper-container>
           </template>
           <template #xl+>
             <div class="flex gap-3 h-[800px]">
@@ -154,10 +154,8 @@ import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
 import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobile.vue';
 import HeaderGallerySlide from '~/components/HeaderGallerySlide.vue';
 
+import { register } from 'swiper/element';
 import { MqResponsive } from 'vue3-mq';
-
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper.min.css';
 
 // Signature Dishes
 const signatureDishes = [
@@ -187,6 +185,9 @@ const signatureDishes = [
     description: 'Our signature juicy pork burger grilled with a secret black pepper sauce.',
   },
 ];
+
+// Register swiper element web component
+register();
 
 function onSwiperAfterInit (swiper) {
   // Disable swiper resize handler on ios

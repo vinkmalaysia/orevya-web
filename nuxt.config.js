@@ -15,4 +15,18 @@ export default defineNuxtConfig({
             'Mrs Saint Delafield': [400],
         },
     },
+    vue: {
+        compilerOptions: {
+            isCustomElement: tag => {
+                // Native custom element whitelist
+                return [
+                    // Swiper
+                    'swiper-container',
+                    'swiper-slide',
+                ].includes(tag);
+            }
+        },
+        vue: {
+        },
+    },
 })
