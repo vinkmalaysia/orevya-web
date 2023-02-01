@@ -9,14 +9,14 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0-1",
-    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@nuxtjs/tailwindcss": "^6.3.0",
     "nuxt": "^3.1.1"
   },
   "dependencies": {
-    "@vueuse/core": "^9.10.0",
+    "@vueuse/core": "^9.12.0",
     "gsap": "^3.11.4",
     "lodash-es": "^4.17.21",
-    "swiper": "^8.4.5",
+    "swiper": "^9.0.0",
     "vue-tippy": "^6.0.0",
     "vue3-mq": "^3.1.3"
   }
