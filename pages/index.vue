@@ -1,5 +1,5 @@
 <template>
-  <main class="max-lg:mt-14 pb-12">
+  <main class="max-lg:mt-14">
     <!-- Small Gallery -->
     <section class="relative h-[120px]">
       <section class="grid grid-cols-4 h-full">
@@ -20,11 +20,10 @@
     <!-- Signature Dish Accordion -->
     <section>
       <div class="pt-6 mt-12 text-center">
-        <h3 class="text-6xl font-MrsSaintDelafield text-[#F1E3E1]" style="">Signature</h3>
-        <h2 class="font-Jost text-4xl xl:text-[4rem] text-[var(--color-secondary)] font-bold xl:font-medium uppercase -translate-y-6" style="">OUR MENU</h2>
+        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[var(--color-primary)]" style="">Signature</h2>
       </div>
       <div class="text-center py-3 mb-12">
-        <svg viewBox="0 0 100.43 3.32" class="w-[300px] fill-neutral-100 mx-auto">
+        <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
           <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
           <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
           <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
@@ -100,51 +99,49 @@
       </ClientOnly>
       <div class="text-center mt-8 xl:my-16">
         <NuxtLink to="/menu">
-          <button class="font-Jost sm:text-xl uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
+          <button class="font-Jost uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
         </NuxtLink>
       </div>
     </section>
-    <MqResponsive target="lg-">
-      <section class="my-8 md:m-12 md:my-32 grid grid-cols-2">
-        <section class="col-span-2 md:col-span-1 flex flex-col items-center justify-center p-12">
-          <h3 class="block font-Jost text-4xl text-[var(--color-secondary)] font-bold uppercase">Find Us</h3>
-          <div class="py-6">
-            <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200">
-              <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
-              <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
-              <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
-              <path d="M38.26,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
-              <path d="M100.43,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
-              <path d="M64.91,1.66c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
-              <path d="M33.82,1.88H1.38c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3H33.82c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
-            </svg>
+    <MqResponsive tag="section" target="lg-" class="mt-24 md:mb-24 grid grid-flow-row md:grid-flow-col md:auto-cols-fr">
+      <section class="max-md:bg-[var(--color-secondary)] flex flex-col items-center justify-center py-24">
+        <h3 class="block font-Jost text-neutral-400 md:text-[var(--color-secondary)] text-3xl md:text-4xl font-bold uppercase">Find Us</h3>
+        <div class="py-6">
+          <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200 md:fill-[var(--color-primary)]">
+            <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
+            <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
+            <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
+            <path d="M38.26,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+            <path d="M100.43,1.58c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+            <path d="M64.91,1.66c0,.71-.57,1.28-1.28,1.28s-1.28-.57-1.28-1.28,.57-1.28,1.28-1.28,1.28,.57,1.28,1.28Z"/>
+            <path d="M33.82,1.88H1.38c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3H33.82c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
+          </svg>
+        </div>
+        <div class="font-Jost text-xl text-center leading-6 my-6">
+          <div>
+            <p class="text-base text-[#D2B48C] md:text-[var(--color-primary)] font-bold">Monday to Friday</p>
+            <p class="text-neutral-400">
+              <time datetime="17:30">5:30pm</time>
+              -
+              <time datetime="22:00">10:00pm</time>
+            </p>
           </div>
-          <div class="font-Jost text-xl text-center leading-6 my-6">
-            <div>
-              <p class="text-[var(--color-primary)] font-bold">Monday to Friday</p>
-              <p class="text-neutral-400">
-                <time datetime="17:30">5:30pm</time>
-                -
-                <time datetime="22:00">10:00pm</time>
-              </p>
-            </div>
-            <div class="mt-3">
-              <p class="text-[var(--color-primary)] font-bold">Saturday - Sunday</p>
-              <p class="text-neutral-400">
-                <time datetime="11:30">11:30am</time>
-                -
-                <time datetime="15:00">3:00pm</time>
-              </p>
-              <p class="text-neutral-400">
-                <time datetime="18:00">6:00pm</time>
-                -
-                <time datetime="22:00">10:00pm</time>
-              </p>
-            </div>
+          <div class="mt-3">
+            <p class="text-base text-[#D2B48C] md:text-[var(--color-primary)] font-bold">Saturday - Sunday</p>
+            <p class="text-neutral-400">
+              <time datetime="11:30">11:30am</time>
+              -
+              <time datetime="15:00">3:00pm</time>
+            </p>
+            <p class="text-neutral-400">
+              <time datetime="18:00">6:00pm</time>
+              -
+              <time datetime="22:00">10:00pm</time>
+            </p>
           </div>
-        </section>
-        <iframe class="col-span-2 md:col-span-1 w-full h-[350px]" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"/>
+        </div>
       </section>
+      <iframe class=" w-full h-full max-md:min-h-[350px]" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"/>
     </MqResponsive>
   </main>
 </template>
