@@ -1,11 +1,13 @@
 <template>
-  <main class="relative py-24 isolate overflow-hidden">
+  <main class="relative py-24 isolate overflow-hidden bg-[#180f0c]">
     <div class="absolute top-[200px] left-[0px] -z-10 pointer-events-none">
-      <div class="absolute left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full border border-black/10" />
+      <div class="absolute -left-[200px] -top-[100px] w-[600px] h-[600px] rounded-full border border-white/10" />
+      <div class="absolute left-[600px] top-[800px] w-[600px] h-[600px] rounded-full border border-white/10" />
+      <div class="absolute left-[1200px] top-[100px] w-[600px] h-[600px] rounded-full border border-white/10" />
     </div>
     <section>
-      <div class="text-center mb-12">
-        <h1 class="inline-block px-4 py-1 font-Jost border-y border-[var(--color-secondary)] text-2xl xl:text-4xl text-[var(--color-secondary)] font-medium xl:font-normal uppercase">Our Menu</h1>
+      <div class="text-center mt-4 mb-12">
+        <h1 class="inline-block px-4 py-1 font-Jost border-y border-[#8a7d4d] text-2xl xl:text-4xl text-[#8a7d4d] font-medium xl:font-normal uppercase">Our Menu</h1>
       </div>
       <section class="flex flex-col 2xl:flex-row justify-center">
         <section class="menu-section">
@@ -68,8 +70,8 @@
 
 <style scoped>
 .menu-section {
-  @apply text-center font-Jost text-lg mx-4 md:mx-24 xl:mx-48 2xl:mx-0 mb-6 py-24 2xl:px-28;
-  background-image: radial-gradient(circle at center 20%, #263932, #2f1b1b);
+  @apply text-center font-Jost text-lg md:mx-24 xl:mx-48 2xl:mx-0 max-2xl:mb-6 py-24 2xl:px-28;
+  background-image: radial-gradient(circle at center 20%, #263932, #2c2a2a);
 }
 
 .menu-heading {
@@ -81,6 +83,6 @@
 }
 
 .menu-list li {
-  @apply py-3 text-base md:text-xl text-white/80;
+  @apply py-3 text-base md:text-xl text-[rgba(255,187,126,.5)];
 }
 </style>
