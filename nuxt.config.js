@@ -16,18 +16,4 @@ export default defineNuxtConfig({
             'Cormorant Garamond': [400],
         },
     },
-    vue: {
-        compilerOptions: {
-            isCustomElement: tag => {
-                // Native custom element whitelist
-                return [
-                    // Swiper
-                    'swiper-container',
-                    'swiper-slide',
-                ].includes(tag);
-            }
-        },
-        vue: {
-        },
-    },
 })
