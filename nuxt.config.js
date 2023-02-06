@@ -13,6 +13,7 @@ export default defineNuxtConfig({
             'Jost': [400, 500, 600, 700],
             'Parisienne': [400],
             'Mrs Saint Delafield': [400],
+            'Cormorant Garamond': [400],
         },
     },
     vue: {

@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         'Jost': ['Jost', ...defaultTheme.fontFamily.sans],
         'Parisienne': ['Parisienne', ...defaultTheme.fontFamily.serif, 'cursive'],
-        'MrsSaintDelafield': ['Mrs Saint Delafield', ...defaultTheme.fontFamily.serif, 'cursive']
+        'MrsSaintDelafield': ['Mrs Saint Delafield', ...defaultTheme.fontFamily.serif, 'cursive'],
+        'CormorantGaramond': ['Cormorant Garamond', ...defaultTheme.fontFamily.serif, 'serif'],
       }
     }
   }
