@@ -104,8 +104,8 @@ function setMenuVisibility(visible) {
 // Watch for app menu visibility change
 watch(isMobileMenuExpanded, (isVisible) => {
   // Set animation direction
-  mobileMenuAnimation.tweenTo(isVisible ? "visible" : "hidden");
-  mobileMenuAnimation.play();
+  mobileMenuAnimation.reversed(!isVisible)
+  mobileMenuAnimation.resume();
 
   // Handle scroll lock when mobile menu opened
   if (viewportScrollLocked) {
@@ -162,6 +162,9 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', autoCloseMobileMenuOnResize);
+
+  mobileMenuAnimation.kill();
+  mobileMenuAnimation = null;
 });
 
 </script>
