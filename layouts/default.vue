@@ -1,5 +1,5 @@
 <template>
-  <FullscreenMenu @linkClick="setMenuVisibility(false)"/>
+  <FullscreenMenu :visible="isMobileMenuExpanded" @linkClick="setMenuVisibility(false)"/>
   <TopNavigation :expanded="isMobileMenuExpanded" @toggle="setMenuVisibility(!isMobileMenuExpanded)"/>
   <div class="flex" style="--bg-color: white;" v-bind="$attrs">
     <section class="max-lg:hidden h-full sticky top-0 bottom-0 px-10 bg-[var(--bg-color)]">
