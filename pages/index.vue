@@ -20,7 +20,7 @@
     <!-- Signature Dish Accordion -->
     <section>
       <div class="pt-6 mt-12 text-center">
-        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[var(--color-primary)]" style="">Signature</h2>
+        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[#869182]" style="">Signature</h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
@@ -105,9 +105,9 @@
     </section>
     <MqResponsive tag="section" target="lg-" class="mt-24 md:mb-24 grid grid-flow-row md:grid-flow-col md:auto-cols-fr">
       <section class="max-md:bg-[var(--color-secondary)] flex flex-col items-center justify-center py-24">
-        <h3 class="block font-Jost text-neutral-400 md:text-[var(--color-secondary)] text-3xl md:text-4xl font-bold uppercase">Find Us</h3>
+        <h3 class="block font-CormorantGaramond font-medium text-neutral-400 md:text-[var(--color-secondary)] text-4xl md:text-5xl uppercase">Find Us</h3>
         <div class="py-6">
-          <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200 md:fill-[var(--color-primary)]">
+          <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200 md:fill-[var(--color-primary)] opacity-30">
             <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
             <path d="M99.23,1.92h-32.44c-.16,0-.3-.13-.3-.3s.13-.3,.3-.3h32.44c.16,0,.3,.13,.3,.3s-.13,.3-.3,.3Z"/>
             <path d="M50.3,.48c5.74,0,9.57,.67,10.35,1.18-.77,.51-4.6,1.18-10.35,1.18s-9.57-.67-10.35-1.18c.77-.51,4.6-1.18,10.35-1.18m0-.48c-6.03,0-10.91,.74-10.91,1.66s4.89,1.66,10.91,1.66,10.91-.74,10.91-1.66-4.89-1.66-10.91-1.66h0Z"/>
