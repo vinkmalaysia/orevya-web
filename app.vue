@@ -40,6 +40,17 @@ body:not(.loaded) {
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-background);
 }
+
+/* Global route transition */
+ .page-enter-active,
+ .page-leave-active {
+   transition: opacity .6s;
+ }
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
 </style>
 
 <script setup>

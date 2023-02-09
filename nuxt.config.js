@@ -16,4 +16,10 @@ export default defineNuxtConfig({
             'Cormorant Garamond': [400, 500],
         },
     },
+    app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in',
+        },
+    },
 })
