@@ -52,7 +52,7 @@
         <div class="h-px w-full bg-gray-300"></div>
       </div>
     </section>
-    <section class="grow">
+    <section class="grow min-w-[320px]">
       <slot />
       <SiteFooter/>
     </section>

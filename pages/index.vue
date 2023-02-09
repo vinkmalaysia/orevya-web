@@ -1,21 +1,38 @@
 <template>
   <main class="max-lg:mt-14">
-    <!-- Small Gallery -->
-    <section class="relative h-[120px]">
-      <section class="grid grid-cols-4 h-full">
-        <HeaderGallerySlide src="/images/dish/ribeye.webp"/>
-        <HeaderGallerySlide src="/images/dish/shrimps.jpg"/>
-        <HeaderGallerySlide src="/images/dish/seafood-spaghetti.jpg"/>
-        <HeaderGallerySlide src="/images/dish/caesar-salad.jpg"/>
+    <section class="grid md:grid-flow-col md:auto-cols-fr" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
+      <section class="h-[400px] md:h-full">
+        <div class="relative bg-[url('/images/interior-2.jpg')] bg-[center_25%] xl:bg-top bg-cover min-w-full h-full max-h-full ">
+          <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
+        </div>
       </section>
-      <div class="absolute h-full w-full bottom-0 pointer-events-none opacity-80" style="background: linear-gradient(0deg,
-        hsla(0, 0%, 100%, 1.0) 0%,
-        hsla(0, 0%, 100%, 0.9) 30%,
-        hsla(0, 0%, 100%, 0.60) 65%,
-        hsla(0, 0%, 100%, 0.2) 91%,
-        hsla(0, 0%, 100%, 0.1) 98.2%,
-        hsla(0, 0%, 100%, 0) 100%);">
-      </div>
+      <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48">
+        <h1 class="font-Jost font-bold text-2xl text-white">OREVYA</h1>
+        <h2 class="font-CormorantGaramond text-xl md:text-3xl text-white/80 mb-6">
+          <span class="text-5xl md:text-6xl text-[#D2B48C]">Exceptional Cuisine</span>
+          <br/>Starts with Superior Ingredients
+        </h2>
+        <div class="text-center py-2">
+          <img src="/images/title-border.png" />
+        </div>
+        <p class="pt-16 font-Jost text-white/60 text-lg md:text-xl md:leading-relaxed mb-2">
+          We carefully select only the freshest and highest quality components for our menu.
+          Every dish is crafted with a devotion to detail and a passion for flavor.
+        </p>
+        <div class="mt-16">
+          <div class="rounded-full border border-white h-12 w-12 mx-auto rotate-90">
+            <svg viewBox="0 0 16 16" height="48" width="48">
+              <g stroke="white">
+                <line stroke-width=".5" x1="4" y1="7.5" x2="11" y2="7.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <polyline stroke-width=".5" points="9 5.5 11 7.5 9 9.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="relative bg-[url('/images/homepage-steak.jpg')] bg-[center_85%] bg-cover h-[250px] lg:h-[400px]">
+      <div class="absolute inset-0 bg-black/80"></div>
     </section>
     <!-- Signature Dish Accordion -->
     <section>
@@ -105,7 +122,7 @@
     </section>
     <MqResponsive tag="section" target="lg-" class="mt-24 md:mb-24 grid grid-flow-row md:grid-flow-col md:auto-cols-fr">
       <section class="max-md:bg-[var(--color-secondary)] flex flex-col items-center justify-center py-24">
-        <h3 class="block font-CormorantGaramond font-medium text-neutral-400 md:text-[var(--color-secondary)] text-4xl md:text-5xl uppercase">Find Us</h3>
+        <h3 class="block font-CormorantGaramond font-medium text-[#D2B48C] md:text-[var(--color-secondary)] text-4xl md:text-5xl uppercase">Find Us</h3>
         <div class="py-6">
           <svg viewBox="0 0 100.43 3.32" class="w-[150px] fill-neutral-200 md:fill-[var(--color-primary)] opacity-30">
             <path d="M2.56,1.58c0,.71-.57,1.28-1.28,1.28S0,2.29,0,1.58,.57,.3,1.28,.3s1.28,.57,1.28,1.28Z"/>
@@ -149,7 +166,6 @@
 <script setup>
 import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
 import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobile.vue';
-import HeaderGallerySlide from '~/components/HeaderGallerySlide.vue';
 
 import { MqResponsive } from 'vue3-mq';
 
