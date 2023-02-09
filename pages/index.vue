@@ -189,7 +189,7 @@ function onSwiperAfterInit (swiper) {
   // Disable swiper resize handler on ios
   // Workaround ios bug
   // @see https://github.com/nolimits4web/swiper/issues/5091
-  if (swiper.device.ios) {
+  if (swiper.device.ios && swiper.resize) {
     swiper.resize.removeObserver();
     window.removeEventListener(
         'resize', swiper.resize.resizeHandler,
