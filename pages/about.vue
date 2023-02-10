@@ -1,5 +1,6 @@
 <template>
   <main>
+    <Title>OREVYA - About Us</Title>
     <section class="grid xl:grid-cols-2">
       <section class="lg:p-16 lg:pb-0">
         <div class="h-full w-full overflow-hidden">

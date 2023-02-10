@@ -1,4 +1,20 @@
 <template>
+  <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <Link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+  <Link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <Meta name="description" content="Savor the Blend of Western and Malaysian Tastes" />
+  <Meta itemprop="name" content="OREVYA" />
+  <Meta itemprop="description" content="Savor the Blend of Western and Malaysian Tastes" />
+  <Meta name="twitter:card" content="summary" />
+  <Meta name="twitter:title" content="OREVYA" />
+  <Meta name="twitter:description" content="Savor the Blend of Western and Malaysian Tastes" />
+  <Meta name="og:title" content="OREVYA" />
+  <Meta name="og:description" content="Savor the Blend of Western and Malaysian Tastes" />
+  <Meta name="og:site_name" content="OREVYA" />
+  <Meta name="og:type" content="website" />
+  <Title>OREVYA</Title>
   <SplashScreen v-if="showSplashScreen" />
   <NuxtLayout>
     <NuxtPage/>

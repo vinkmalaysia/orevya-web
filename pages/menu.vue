@@ -1,5 +1,6 @@
 <template>
   <main class="relative py-24 isolate overflow-hidden bg-[#2c2a2a]">
+    <Title>OREVYA - Menu</Title>
     <div class="absolute top-[200px] left-[0px] -z-10 pointer-events-none">
       <div class="absolute -left-[200px] -top-[100px] w-[600px] h-[600px] rounded-full border border-white/10" />
       <div class="absolute left-[600px] top-[800px] w-[600px] h-[600px] rounded-full border border-white/10" />
