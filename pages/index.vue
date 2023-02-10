@@ -20,14 +20,14 @@
           Every dish is crafted with a devotion to detail and a passion for flavor.
         </p>
         <div class="mt-16">
-          <div class="rounded-full border border-white h-12 w-12 mx-auto rotate-90">
-            <svg viewBox="0 0 16 16" height="48" width="48">
+          <button class="rounded-full border border-white mx-auto" @click="scrollToSignaturesSection">
+            <svg viewBox="0 0 16 16" class="h-12 w-12 rotate-90">
               <g stroke="white">
-                <line stroke-width=".5" x1="4" y1="7.5" x2="11" y2="7.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                <polyline stroke-width=".5" points="9 5.5 11 7.5 9 9.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <line stroke-width=".5" x1="4" y1="8" x2="11" y2="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <polyline stroke-width=".5" points="9 6 11 8 9 10" fill="none" stroke-linecap="round" stroke-linejoin="round" />
               </g>
             </svg>
-          </div>
+          </button>
         </div>
       </section>
     </section>
@@ -35,9 +35,9 @@
       <div class="absolute inset-0 bg-black/80"></div>
     </section>
     <!-- Signature Dish Accordion -->
-    <section>
+    <section id="section-homepage-signature">
       <div class="pt-6 mt-12 text-center">
-        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[#869182]" style="">Signature</h2>
+        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[#869182]">Signature</h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
@@ -200,6 +200,10 @@ const signatureDishes = [
     description: 'Our signature juicy pork burger grilled with a secret black pepper sauce.',
   },
 ];
+
+function scrollToSignaturesSection () {
+  document.getElementById('section-homepage-signature').scrollIntoView({ behavior: "smooth" });
+}
 
 function onSwiperAfterInit (swiper) {
   // Disable swiper resize handler on ios
