@@ -55,14 +55,20 @@ body:not(.loaded) {
 
 <script setup>
 import { gsap } from "gsap";
+
 import SplashScreen from '~/components/SplashScreen.vue';
 
+const nuxtApp = useNuxtApp();
 const showSplashScreen = ref(true);
 
-const nuxtApp = useNuxtApp();
+// Enable smooth scroll
+if (typeof window !== 'undefined') {
+  import("smoothscroll-for-websites");
+}
 
 // App mount complete
 nuxtApp.hook("app:mounted", function () {
+
   // Delay 1 second for custom fonts to load
   setTimeout(function () {
     // Animate hide splash screen
