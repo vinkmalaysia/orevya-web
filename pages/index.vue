@@ -37,7 +37,7 @@
     <!-- Signature Dish Accordion -->
     <section id="section-homepage-signature">
       <div class="pt-6 mt-12 text-center">
-        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[#869182]">Signature</h2>
+        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[var(--color-primary)]">Signature</h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
@@ -116,7 +116,7 @@
       </ClientOnly>
       <div class="text-center mt-8 xl:my-16">
         <NuxtLink to="/menu">
-          <button class="font-Jost uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
+          <button class="font-Jost text-2xl uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
         </NuxtLink>
       </div>
     </section>
