@@ -8,9 +8,9 @@
         </div>
       </section>
       <section class="p-12 lg:p-16 font-Jost text-black/70 text-lg md:text-2xl md:leading-relaxed">
-        <h1 class="mb-16 font-CormorantGaramond text-4xl md:text-6xl text-[var(--color-primary)] xl:mt-24" v-motion :initial="{ x: 300, opacity: 0 }" :visibleOnce="defaultTransition">Experience the Taste of Western Delights</h1>
-        <p class="mb-12" v-motion :initial="{ x: 300, opacity: 0 }" :visibleOnce="defaultTransition">Welcome to <strong>Orevya</strong>, a premier dining destination located in Kuala Lumpur, Malaysia. Our restaurant serves a delicious selection of Western and fusion cuisine, featuring classic dishes made with only the freshest and finest ingredients. Our elegant and classy dining room sets the perfect atmosphere for your dinner.</p>
-        <p class="mb-12" v-motion :initial="{ x: 300, opacity: 0 }" :visibleOnce="defaultTransition">At <strong>Orevya</strong>, our vision is to provide guests with delicious, expertly prepared food and exceptional service in a stylish and sophisticated setting. Our knowledgeable staff is dedicated to ensuring that every aspect of your dining experience is unforgettable.</p>
+        <h1 class="mb-16 font-CormorantGaramond text-4xl md:text-6xl text-[var(--color-primary)] xl:mt-24" data-gsap-animate="intro">Experience the Taste of Western Delights</h1>
+        <p class="mb-12" data-gsap-animate="intro">Welcome to <strong>Orevya</strong>, a premier dining destination located in Kuala Lumpur, Malaysia. Our restaurant serves a delicious selection of Western and fusion cuisine, featuring classic dishes made with only the freshest and finest ingredients. Our elegant and classy dining room sets the perfect atmosphere for your dinner.</p>
+        <p class="mb-12" data-gsap-animate="intro">At <strong>Orevya</strong>, our vision is to provide guests with delicious, expertly prepared food and exceptional service in a stylish and sophisticated setting. Our knowledgeable staff is dedicated to ensuring that every aspect of your dining experience is unforgettable.</p>
       </section>
     </section>
     <div class="py-6 lg:p-16">
@@ -48,7 +48,19 @@ strong {
 </style>
 
 <script setup>
+import { gsap } from 'gsap';
 const rootEl = ref();
+
+onMounted(() => {
+  usePageTransitionEvent(() => {
+    gsap.from(rootEl.value.querySelectorAll("[data-gsap-animate='intro']"), {
+      x: 100,
+      autoAlpha: 0,
+      duration: 0.6,
+      stagger: 0.2,
+    });
+  });
+})
 
 const defaultTransition = {
   x: 0,
