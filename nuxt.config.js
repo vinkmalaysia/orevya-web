@@ -6,6 +6,9 @@ export default defineNuxtConfig({
 
         // https://google-fonts.nuxtjs.org/
         "@nuxtjs/google-fonts",
+
+        // https://motion.vueuse.org/
+        "@vueuse/motion/nuxt",
     ],
     // https://google-fonts.nuxtjs.org/
     googleFonts: {
