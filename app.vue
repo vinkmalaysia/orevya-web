@@ -72,6 +72,7 @@ body:not(.loaded) {
 <script setup>
 import { gsap } from "gsap";
 
+import { event as PageTransitionFinishEvent } from '~/plugins/pagetransition';
 import SplashScreen from '~/components/SplashScreen.vue';
 
 const nuxtApp = useNuxtApp();
@@ -83,6 +84,11 @@ if (typeof window !== 'undefined') {
 }
 
 onMounted(() => {
+  // Fire page transition finish event
+  nextTick(() => {
+    window.dispatchEvent(PageTransitionFinishEvent);
+  })
+
   // Animate hide splash screen
   gsap.to('#splash-screen .logo svg', { autoAlpha: 0, y: -10, duration: 0.8 });
   gsap.to('#splash-screen .progress-bar', { autoAlpha: 0, scaleX: 3, duration: 1 });
