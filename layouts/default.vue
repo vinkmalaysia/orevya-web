@@ -1,6 +1,6 @@
 <template>
-  <FullscreenMenu :visible="isMobileMenuExpanded" @linkClick="setMenuVisibility(false)"/>
-  <TopNavigation :expanded="isMobileMenuExpanded" @toggle="setMenuVisibility(!isMobileMenuExpanded)"/>
+  <FullscreenMenu :visible="isMobileMenuExpanded" @linkClick="isMobileMenuExpanded = false"/>
+  <TopNavigation :expanded="isMobileMenuExpanded" @toggle="isMobileMenuExpanded = !isMobileMenuExpanded"/>
   <div class="flex" style="--bg-color: white;" v-bind="$attrs">
     <section class="max-lg:hidden h-full sticky top-0 bottom-0 px-10 bg-[var(--bg-color)]">
       <div class="flex justify-center">
@@ -70,7 +70,8 @@ import FullscreenMenu from '~/components/FullscreenMenu.vue';
 import TopNavigation from '~/components/TopNavigation.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 
-import { breakpointsTailwind, useBreakpoints, useScrollLock } from '@vueuse/core';
+import { breakpointsTailwind, useEventListener, useBreakpoints, useScrollLock } from '@vueuse/core';
+
 import throttle from 'lodash-es/throttle';
 import { gsap } from 'gsap';
 
@@ -90,81 +91,43 @@ const sideMenuItems = [
   },
 ];
 
-let mobileMenuAnimation;
-let viewportScrollLocked;
-
 // Mobile menu visibility
 const isMobileMenuExpanded = ref(false);
 
-// Show/hide menu
-function setMenuVisibility(visible) {
-  isMobileMenuExpanded.value = visible;
+onMounted(() => {
+  // Side menu reveal animation
+  gsap.fromTo("#side-menu li", {
+    autoAlpha: 0,
+    y: -20,
+  }, {
+    autoAlpha: 1,
+    y: 0,
+    duration: .8,
+    stagger: 0.2,
+  });
+});
+
+// Lock scroll when menu expanded
+let viewportScrollLocked;
+
+if (typeof document !== "undefined") {
+  viewportScrollLocked = useScrollLock(document.documentElement, isMobileMenuExpanded.value);
+  watch(isMobileMenuExpanded, visible => {
+    viewportScrollLocked.value = visible;
+  });
 }
 
-// Watch for app menu visibility change
-watch(isMobileMenuExpanded, (isVisible) => {
-  // Set animation direction
-  mobileMenuAnimation.reversed(!isVisible)
-  mobileMenuAnimation.resume();
-
-  // Handle scroll lock when mobile menu opened
-  if (viewportScrollLocked) {
-    // Lock/unlock viewport scroll
-    viewportScrollLocked.value = isVisible;
-  } else {
-    // Set scroll lock target to document if undefined
-    viewportScrollLocked = useScrollLock(document.documentElement, isVisible);
-  }
-});
-
-// Close mobile menu when window resized/expanded
+// Auto close mobile menu on window resize
 const breakpoints = useBreakpoints(breakpointsTailwind);
 
-const autoCloseMobileMenuOnResize = throttle(() => {
-  const breakpoint_lg = breakpoints.greaterOrEqual('lg');
+if (typeof window !== "undefined") {
+  useEventListener(window, 'resize', throttle(() => {
+    const widescreen = breakpoints.greaterOrEqual('lg').value;
 
-  if (breakpoint_lg.value) {
-    // Desktop
-    // Auto close menu
-    setMenuVisibility(false);
-  }
-}, 80);
-
-onMounted(() => {
-  window.addEventListener('resize', autoCloseMobileMenuOnResize);
-
-  // Define mobile menu transition animation
-  mobileMenuAnimation = gsap.timeline({ paused: true })
-      .addLabel("hidden", 0)
-      .fromTo("#fullscreen-menu-wrapper", {
-        autoAlpha: 0,
-        y: -100,
-      }, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.5,
-        ease: "expo.inOut",
-      })
-      .fromTo("#fullscreen-menu-wrapper > nav > ul > a", {
-        autoAlpha: 0,
-        y: 30,
-      }, {
-        autoAlpha: 1,
-        y: 0,
-        duration: .5,
-        delay: 0.5,
-        stagger: 0.1,
-        ease: 'expo.inOut',
-      }, "-=.75")
-      .addLabel("visible", 0)
-      .seek(isMobileMenuExpanded.value ? "visible" : "hidden");
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', autoCloseMobileMenuOnResize);
-
-  mobileMenuAnimation.kill();
-  mobileMenuAnimation = null;
-});
+    if (widescreen) {
+      isMobileMenuExpanded.value = false;
+    }
+  }, 80))
+}
 
 </script>

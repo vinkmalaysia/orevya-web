@@ -1,26 +1,24 @@
 <template>
-  <main class="max-lg:mt-14">
+  <main class="max-lg:mt-14" ref="rootEl">
     <section class="grid md:grid-flow-col md:auto-cols-fr" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
       <section class="h-[400px] md:h-full">
-        <div class="relative bg-[url('/images/interior-2.jpg')] bg-[center_25%] xl:bg-top bg-cover min-w-full h-full max-h-full ">
+        <div class="relative bg-[url('/images/interior-2.jpg')] bg-[center_25%] xl:bg-top bg-cover min-w-full h-full max-h-full" data-gsap-animate="hero">
           <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
         </div>
       </section>
       <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48">
-        <h1 class="font-Jost font-bold text-2xl text-white">OREVYA</h1>
-        <h2 class="font-CormorantGaramond text-xl md:text-3xl text-white/80 mb-6">
-          <span class="text-5xl md:text-6xl text-[#D2B48C]">Exceptional Cuisine</span>
-          <br/>Starts with Superior Ingredients
-        </h2>
-        <div class="text-center py-2">
+        <h1 class="font-Jost font-bold text-2xl text-white" data-gsap-animate="hero">OREVYA</h1>
+        <p class="font-CormorantGaramond text-5xl leading-7 md:text-6xl text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
+        <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 mb-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
+        <div class="text-center py-2" data-gsap-animate="hero">
           <img src="/images/title-border.png" />
         </div>
-        <p class="pt-16 font-Jost text-white/60 text-lg md:text-xl md:leading-relaxed mb-2">
+        <p class="pt-16 font-Jost text-white/60 text-lg md:text-xl md:leading-relaxed mb-2" data-gsap-animate="hero">
           We carefully select only the freshest and highest quality components for our menu.
           Every dish is crafted with a devotion to detail and a passion for flavor.
         </p>
         <div class="mt-16">
-          <button class="rounded-full border border-white mx-auto" @click="scrollToSignaturesSection">
+          <button class="rounded-full border border-white mx-auto" @click="scrollToSignaturesSection" data-gsap-animate="hero-skip">
             <svg viewBox="0 0 16 16" class="h-12 w-12 rotate-90">
               <g stroke="white">
                 <line stroke-width=".5" x1="4" y1="8" x2="11" y2="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
@@ -31,7 +29,7 @@
         </div>
       </section>
     </section>
-    <section class="relative bg-[url('/images/homepage-steak.jpg')] bg-[center_85%] bg-cover h-[250px] lg:h-[400px]">
+    <section class="relative bg-[url('/images/homepage-steak.jpg')] bg-[center_85%] bg-cover h-[250px] lg:h-[400px]" data-gsap-animate="hero-steak">
       <div class="absolute inset-0 bg-black/80"></div>
     </section>
     <!-- Signature Dish Accordion -->
@@ -172,6 +170,13 @@ import { MqResponsive } from 'vue3-mq';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper.min.css';
 
+import { gsap } from "gsap";
+
+const rootEl = ref();
+
+// Animations
+let heroTransition = gsap.timeline()
+
 // Signature Dishes
 const signatureDishes = [
   {
@@ -216,4 +221,33 @@ function onSwiperAfterInit (swiper) {
     );
   }
 };
+
+onMounted(() => {
+  heroTransition = gsap
+    .timeline()
+    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero']"), {
+      y: 100,
+      autoAlpha: 0,
+      duration: 0.6,
+      delay: 0.4,
+      stagger: 0.2,
+    })
+    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-steak']"), {
+      autoAlpha: 0,
+      duration: 0.8,
+      delay: 0.1,
+    }, "<")
+    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-skip']"), {
+      y: -150,
+      autoAlpha: 0,
+      duration: 0.6,
+      delay: 0.3,
+    })
+    .restart();
+})
+
+onUnmounted(() => {
+  heroTransition.kill();
+  heroTransition = null;
+})
 </script>
