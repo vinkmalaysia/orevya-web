@@ -1,15 +1,15 @@
 <template>
   <main class="max-lg:mt-14" ref="rootEl">
-    <section class="grid md:grid-flow-col md:auto-cols-fr" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
-      <section class="h-[400px] md:h-full">
+    <section class="grid md:grid-flow-col md:auto-cols-fr">
+      <section class="h-[150px] md:h-full bg-[#252C2A]">
         <div class="relative bg-[url('/images/interior-2.jpg')] bg-[center_25%] xl:bg-top bg-cover min-w-full h-full max-h-full" data-gsap-animate="hero">
           <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
         </div>
       </section>
-      <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48">
+      <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
         <h1 class="font-Jost font-bold text-2xl text-white" data-gsap-animate="hero">OREVYA</h1>
-        <p class="font-CormorantGaramond text-5xl leading-7 md:text-6xl text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
-        <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 mb-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
+        <p class="font-CormorantGaramond text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
+        <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 my-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
         <div class="text-center py-2" data-gsap-animate="hero">
           <img src="/images/title-border.png" />
         </div>
@@ -18,9 +18,9 @@
           Every dish is crafted with a devotion to detail and a passion for flavor.
         </p>
         <div class="mt-16">
-          <button class="rounded-full border border-white mx-auto" @click="scrollToSignaturesSection" data-gsap-animate="hero-skip">
+          <button class="group rounded-full border border-white/60 hover:border-white transition-colors mx-auto" @click="scrollToSignaturesSection" data-gsap-animate="hero-skip">
             <svg viewBox="0 0 16 16" class="h-12 w-12 rotate-90">
-              <g stroke="white">
+              <g class="stroke-white/80 group-hover:stroke-white transition-colors">
                 <line stroke-width=".5" x1="4" y1="8" x2="11" y2="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
                 <polyline stroke-width=".5" points="9 6 11 8 9 10" fill="none" stroke-linecap="round" stroke-linejoin="round" />
               </g>
@@ -35,7 +35,7 @@
     <!-- Signature Dish Accordion -->
     <section id="section-homepage-signature">
       <div class="pt-6 mt-12 text-center">
-        <h2 class="text-6xl md:text-8xl font-MrsSaintDelafield text-[var(--color-primary)]">Signature</h2>
+        <h2 class="text-7xl md:text-8xl !leading-[7rem] md:!leading-[11rem] font-MrsSaintDelafield text-[var(--color-primary)]" data-gsap-animate="signature" v-html="signatureTitle"></h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
@@ -114,7 +114,7 @@
       </ClientOnly>
       <div class="text-center mt-8 xl:my-16">
         <NuxtLink to="/menu">
-          <button class="font-Jost text-2xl uppercase font-medium transition-[padding] py-0.5 hover:px-2 border-b-[3px] border-[var(--color-primary)] text-[var(--color-secondary)]">View Menu</button>
+          <button class="font-Jost text-sm uppercase font-medium transition-[padding] py-4 px-12 hover:px-14 bg-[var(--color-primary)] text-white">View Menu</button>
         </NuxtLink>
       </div>
     </section>
@@ -161,11 +161,38 @@
   </main>
 </template>
 
+<style scoped>
+[data-gsap-animate='signature'] {
+  overflow: hidden;
+
+  :deep(.char) {
+    visibility: hidden;
+
+    &::before {
+      visibility: visible;
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.4,0,0.6,1);
+      transition-delay: calc(0.05s * var(--char-index));
+      transform: translateY(75%);
+    }
+  }
+
+  &.play :deep(.char)::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 <script setup>
 import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
 import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobile.vue';
 
 import { MqResponsive } from 'vue3-mq';
+
+// Splitting.js styles
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper.min.css';
@@ -178,6 +205,7 @@ const rootEl = ref();
 let heroTransition = gsap.timeline()
 
 // Signature Dishes
+const signatureTitle = ref("Signature");
 const signatureDishes = [
   {
     src: '/images/dish/beef-tenderloin.jpg',
@@ -222,32 +250,50 @@ function onSwiperAfterInit (swiper) {
   }
 };
 
+let signatureTitleAnim;
+
 onMounted(() => {
-  heroTransition = gsap
-    .timeline()
-    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero']"), {
-      y: 100,
-      autoAlpha: 0,
-      duration: 0.6,
-      delay: 0.4,
-      stagger: 0.2,
-    })
-    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-steak']"), {
-      autoAlpha: 0,
-      duration: 0.8,
-      delay: 0.1,
-    }, "<")
-    .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-skip']"), {
-      y: -150,
-      autoAlpha: 0,
-      duration: 0.6,
-      delay: 0.3,
-    })
-    .restart();
+  // Split signature title characters for reveal animation
+  import("splitting").then(Splitting => {
+    signatureTitle.value = Splitting.html({ content: 'Signature', by: 'chars' });
+  });
+
+  // Wait for page transition end
+  usePageTransitionEvent(() => {
+    // Play signature title reveal animation
+    signatureTitleAnim = useInViewOnce(document.querySelector("[data-gsap-animate='signature']"));
+
+    // Hero section transition
+    heroTransition = gsap
+      .timeline()
+      .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero']"), {
+        y: 100,
+        autoAlpha: 0,
+        duration: 0.6,
+        delay: 0.4,
+        stagger: 0.2,
+      })
+      .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-steak']"), {
+        autoAlpha: 0,
+        duration: 0.6,
+        delay: 0.05,
+      }, "<")
+      .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero-skip']"), {
+        y: -150,
+        autoAlpha: 0,
+        duration: 0.6,
+      })
+      .restart();
+  });
 })
 
 onUnmounted(() => {
+  // Clean up animations
+  // Hero
   heroTransition.kill();
   heroTransition = null;
+
+  // Signature title
+  signatureTitleAnim?.();
 })
 </script>
