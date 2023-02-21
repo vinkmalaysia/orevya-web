@@ -42,8 +42,8 @@
       <div class="my-24 flex ml-4">
         <nav id="side-menu" class="text-[var(--color-secondary)] font-Jost font-medium tracking-wide text-lg">
           <ul>
-            <li v-for="item in sideMenuItems" class="[&:not(:last-child)]:mb-[25px]">
-              <NuxtLink :to="item.to" class="hover:text-neutral-400 transition-colors duration-300">{{ item.title }}</NuxtLink>
+            <li v-for="item in sideMenuItems" class="relative [&:not(:last-child)]:mb-[25px] hover:translate-x-0.5 transition-transform duration-300">
+              <NuxtLink :to="item.to" class="hover:text-[var(--color-primary)] transition-colors duration-300">{{ item.title }}</NuxtLink>
             </li>
           </ul>
         </nav>
@@ -96,15 +96,19 @@ const isMobileMenuExpanded = ref(false);
 
 onMounted(() => {
   // Side menu reveal animation
-  gsap.fromTo("#side-menu li", {
-    autoAlpha: 0,
-    y: -20,
-  }, {
-    autoAlpha: 1,
-    y: 0,
-    duration: .8,
-    stagger: 0.2,
-  });
+  gsap
+    .fromTo("#side-menu li", {
+      autoAlpha: 0,
+      y: -20,
+    }, {
+      autoAlpha: 1,
+      y: 0,
+      duration: .8,
+      stagger: 0.2,
+      onComplete: function () {
+        this.revert();
+      }
+    });
 });
 
 // Lock scroll when menu expanded
