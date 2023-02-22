@@ -8,7 +8,7 @@
       </section>
       <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
         <h1 class="font-Jost font-bold text-2xl text-white" data-gsap-animate="hero">OREVYA</h1>
-        <p class="font-CormorantGaramond text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
+        <p class="font-CormorantGaramond font-semibold text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
         <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 my-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
         <div class="text-center py-2" data-gsap-animate="hero">
           <img src="/images/title-border.png" />
