@@ -1,7 +1,7 @@
 <template>
-  <section ref="wrapper" class="fixed inset-0 bg-[#eee] lg:hidden z-[var(--zindex-fullscreen-menu)]">
-    <nav class="pt-16">
-      <ul class="grid grid-rows-3 text-3xl font-CormorantGaramond text-md text-center gap-1">
+  <section ref="wrapper" class="fixed inset-0 pt-[60px] bg-[#eee] lg:hidden z-[var(--zindex-fullscreen-menu)]">
+    <nav class="menu-links flex justify-center w-full min-h-full max-h-full overflow-y-auto">
+      <ul class="w-full grid grid-flow-row auto-rows-min text-3xl font-CormorantGaramond text-md text-center gap-1">
         <NuxtLink v-for="item in items" :to="item.to" @click="$emit('link-click')">
           <li class="py-4 text-neutral-800 hover:text-[#ba6900] hover:bg-gray-200 transition-colors duration-700">{{ item.title }}</li>
         </NuxtLink>
@@ -9,6 +9,24 @@
     </nav>
   </section>
 </template>
+
+<style scoped>
+nav.menu-links {
+  margin-top: 4rem;
+}
+
+@media (min-height: 280px) and (max-height: 400px) {
+  nav.menu-links {
+    @apply items-center;
+  }
+}
+
+@media (max-height: 400px) {
+  nav.menu-links {
+    margin-top: 0;
+  }
+}
+</style>
 
 <script setup>
 import { gsap } from 'gsap';
