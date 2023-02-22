@@ -201,6 +201,7 @@ import 'swiper/swiper.min.css';
 import { gsap } from "gsap";
 
 const rootEl = ref();
+const unmountCleanupList = [];
 
 // Animations
 let heroTransition = gsap.timeline()
@@ -263,10 +264,12 @@ onMounted(() => {
   usePageTransitionEvent(() => {
     // Play signature title reveal animation
     const el = document.querySelector("[data-gsap-animate='signature']");
-    signatureTitleAnim = useInViewOnce(el, () => el.classList.add("play"));
+    unmountCleanupList.push(
+      useInViewOnce(el, () => el.classList.add("play"))
+    );
 
     // Hero section transition
-    heroTransition = gsap
+    gsap
       .timeline()
       .from(rootEl.value.querySelectorAll("[data-gsap-animate='hero']"), {
         y: 100,
@@ -289,13 +292,11 @@ onMounted(() => {
   });
 })
 
-onUnmounted(() => {
-  // Clean up animations
-  // Hero
-  heroTransition.kill();
-  heroTransition = null;
-
-  // Signature title
-  signatureTitleAnim?.();
-})
+onBeforeUnmount(() => {
+  // Clean up
+  while (unmountCleanupList.length > 0) {
+    const i = unmountCleanupList.shift();
+    if (typeof i === 'function') i();
+  }
+});
 </script>
