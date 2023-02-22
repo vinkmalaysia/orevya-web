@@ -1,11 +1,11 @@
 <template>
   <footer class="bg-[var(--color-secondary)] pt-16 py-8 px-8">
     <section class="xl:hidden h-[250px] lg:h-[350px] w-full pb-8" v-if="$route.path !== '/'">
-      <iframe class="w-full h-full" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
+      <Map class="w-full h-full" />
     </section>
     <section class="grid grid-cols-12 gap-2 md:gap-8">
       <section class="max-xl:hidden row-span-2 col-span-6 rounded-xl overflow-hidden">
-        <iframe class="w-full h-full" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" />
+        <Map class="w-full h-full" />
       </section>
       <section class="col-span-12 md:col-span-4 xl:col-span-6">
         <!-- Reservation -->
@@ -89,3 +89,7 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import Map from '~/components/Map.vue';
+</script>

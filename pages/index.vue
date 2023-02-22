@@ -156,7 +156,7 @@
           </div>
         </div>
       </section>
-      <iframe class=" w-full h-full max-md:min-h-[350px]" src="https://maps.google.com/maps?width=100%25&amp;height=350&amp;hl=en&amp;q=Plaza%20Arkadia,%20Desa%20Parkcity+(Orevya)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"/>
+      <Map class="w-full h-full max-md:min-h-[350px]" />
     </MqResponsive>
   </main>
 </template>
@@ -187,6 +187,7 @@
 <script setup>
 import AccordionGallerySlide from '~/components/AccordionGallerySlide.vue';
 import AccordionGallerySlideMobile from '~/components/AccordionGallerySlideMobile.vue';
+import Map from '~/components/Map.vue';
 
 import { MqResponsive } from 'vue3-mq';
 
