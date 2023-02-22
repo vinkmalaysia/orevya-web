@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
         }
       });
     },
-    { threshold: 1, rootMargin: '-5% 0px' }
+    { threshold: 0.3, rootMargin: '-5% 0px' }
   );
 }
 
@@ -24,16 +24,19 @@ if (typeof window !== "undefined") {
  * @returns {function?} Function to clean up event listener or none if server side
  */
 export default function (el, callback) {
-  if (typeof window === "undefined" || !el) return;
+  // If element does not exist
+  if (!el) throw new Error('Missing target element when calling useInViewOnce()');
+
+  // If server side
+  if (typeof window === "undefined") return;
 
   viewportObserver.observe(el);
 
-  el.addEventListener(viewportEntered.type, e => {
-    // Add "play" to target's class
-    el.classList.add("play");
-
-    // Callback (only if specified)
-    callback?.()
+  el.addEventListener(viewportEntered.type, (...args) => {
+    // Call callback only if specified
+    if (callback) {
+      callback?.(...args)
+    }
   }, { once: true })
 
   return () => {

@@ -262,7 +262,8 @@ onMounted(() => {
   // Wait for page transition end
   usePageTransitionEvent(() => {
     // Play signature title reveal animation
-    signatureTitleAnim = useInViewOnce(document.querySelector("[data-gsap-animate='signature']"));
+    const el = document.querySelector("[data-gsap-animate='signature']");
+    signatureTitleAnim = useInViewOnce(el, () => el.classList.add("play"));
 
     // Hero section transition
     heroTransition = gsap
