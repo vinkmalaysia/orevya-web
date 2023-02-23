@@ -11,7 +11,7 @@
         <p class="font-CormorantGaramond font-semibold text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
         <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 my-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
         <div class="text-center py-2" data-gsap-animate="hero">
-          <img src="/images/title-border.png" />
+          <nuxt-img src="/images/title-border.png" height="17" width="110" role="presentation" />
         </div>
         <p class="pt-16 font-Jost text-white/60 text-lg md:text-xl md:leading-relaxed mb-2" data-gsap-animate="hero">
           We carefully select only the freshest and highest quality components for our menu.
@@ -29,7 +29,8 @@
         </div>
       </section>
     </section>
-    <section class="relative bg-[url('/images/homepage-steak.jpg')] bg-[center_85%] bg-cover h-[250px] lg:h-[400px]" data-gsap-animate="hero-steak">
+    <section class="relative h-[250px] lg:h-[400px]" data-gsap-animate="hero-steak">
+      <nuxt-picture src="/images/homepage-steak.jpg" sizes="sm:100vw lg:800px" :imgAttrs="{ class: 'w-full h-full object-cover object-[center_85%]' }" role="presentation" />
       <div class="absolute inset-0 bg-black/80"></div>
     </section>
     <!-- Signature Dish Accordion -->

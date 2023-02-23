@@ -7,6 +7,9 @@ export default defineNuxtConfig({
         // https://google-fonts.nuxtjs.org/
         "@nuxtjs/google-fonts",
 
+        // https://v1.image.nuxtjs.org/
+        "@nuxt/image-edge",
+
         // https://motion.vueuse.org/
         "@vueuse/motion/nuxt",
     ],
