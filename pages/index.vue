@@ -18,7 +18,7 @@
           Every dish is crafted with a devotion to detail and a passion for flavor.
         </p>
         <div class="mt-16">
-          <button class="group rounded-full border border-white/60 hover:border-white transition-colors mx-auto" @click="scrollToSignaturesSection" data-gsap-animate="hero-skip">
+          <button aria-label="Jump to next section" class="group rounded-full border border-white/60 hover:border-white transition-colors mx-auto" @click="scrollToSignaturesSection" data-gsap-animate="hero-skip">
             <svg viewBox="0 0 16 16" class="h-12 w-12 rotate-90">
               <g class="stroke-white/80 group-hover:stroke-white transition-colors">
                 <line stroke-width=".5" x1="4" y1="8" x2="11" y2="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
