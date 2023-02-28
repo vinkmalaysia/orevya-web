@@ -1,3 +1,5 @@
+import Markdown from 'vite-plugin-md';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
@@ -27,5 +29,13 @@ export default defineNuxtConfig({
             name: 'page',
             mode: 'out-in',
         },
+    },
+    vite: {
+        vue: {
+            include: [/\.vue$/, /\.md$/],
+        },
+        plugins: [
+            Markdown(),
+        ],
     },
 })
