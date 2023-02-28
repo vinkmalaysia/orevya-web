@@ -82,7 +82,6 @@
     <!-- Disclaimer -->
     <div class="mt-8 font-Jost">
       <span>
-        <NuxtLink to="/terms" class="[&:not(:first-child)]:ml-3 px-3 py-0.5 rounded-full border border-[#b77e4d] hover:border-[#e1a16a] align-middle text-[#b77e4d] hover:text-[#e1a16a]">Terms</NuxtLink>
         <NuxtLink to="/privacy" class="[&:not(:first-child)]:ml-3 px-3 py-0.5 rounded-full border border-[#b77e4d] hover:border-[#e1a16a] align-middle text-[#b77e4d] hover:text-[#e1a16a]">Privacy Policy</NuxtLink>
       </span>
       <div class="mt-2 font-medium text-[#E3DCC2] text-sm">&copy; Orevya. All rights reserved.</div>
