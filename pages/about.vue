@@ -4,7 +4,7 @@
     <section class="grid xl:grid-cols-2">
       <section class="lg:p-16 lg:pb-0">
         <div class="h-full w-full overflow-hidden" v-motion :initial="{ x: 150, opacity: 0 }" :visibleOnce="defaultTransition">
-          <nuxt-picture src="/images/interior-1.jpg" alt="Interior view of Orevya" sizes="sm:100vw md:100vw lg:100vw xl:75vw 50vw" :imgAttrs="{ class: 'h-full object-cover' }" />
+          <nuxt-picture src="/images/interior-1.jpg" alt="Interior view of Orevya" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:75vw 50vw" :imgAttrs="{ class: 'h-full object-cover' }" />
         </div>
       </section>
       <section class="p-12 lg:p-16 font-Jost text-black/70 text-lg md:text-2xl md:leading-relaxed">
@@ -26,7 +26,7 @@
       <section class="grid md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 -mt-24">
         <section>
           <div class="inline-block w-full" v-motion :initial="{ y: 100, opacity: 0 }" :visibleOnce="defaultTransition">
-            <nuxt-picture src="/images/maria-portrait-1.jpg" alt="Portrait of Chef Maria Rodriguez, owner of Orevya" :imgAttrs="{ class: 'w-full' }" />
+            <nuxt-picture src="/images/maria-portrait-1.jpg" alt="Portrait of Chef Maria Rodriguez, owner of Orevya" sizes="xs:100vw sm:100vw md:33vw lg:75vw xl:25vw" :imgAttrs="{ class: 'w-full' }" />
           </div>
         </section>
         <section class="md:col-span-2 lg:grid-cols-1 xl:grid-cols-3 p-12 2xl:p-32 md:mt-24 font-Jost text-black/70">

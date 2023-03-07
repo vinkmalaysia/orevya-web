@@ -1,11 +1,10 @@
 <template>
   <main class="max-lg:mt-14" ref="rootEl">
     <section class="grid md:grid-flow-col md:auto-cols-fr">
-      <section class="h-[150px] md:h-full bg-[#252C2A]">
-        <div class="relative bg-[url('/images/interior-2.jpg')] bg-[center_25%] xl:bg-top bg-cover min-w-full h-full max-h-full" data-gsap-animate="hero">
-          <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
-        </div>
-      </section>
+      <div class="relative bg-[#252C2A] w-full h-full" data-gsap-animate="hero">
+        <nuxt-picture src="/images/interior-2.jpg" sizes="xs:100vw sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw" role="presentation" :imgAttrs="{ class: 'min-w-full min-h-full object-cover object-top' }" />
+        <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
+      </div>
       <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
         <h1 class="font-Jost font-bold text-2xl text-white" data-gsap-animate="hero">OREVYA</h1>
         <p class="font-CormorantGaramond font-semibold text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
@@ -30,7 +29,7 @@
       </section>
     </section>
     <section class="relative h-[250px] lg:h-[400px]" data-gsap-animate="hero-steak">
-      <nuxt-picture src="/images/homepage-steak.jpg" sizes="sm:100vw lg:800px" :imgAttrs="{ class: 'w-full h-full object-cover object-[center_85%]' }" role="presentation" />
+      <nuxt-picture src="/images/homepage-steak.jpg" sizes="xs:100vw sm:100vw" :imgAttrs="{ class: 'w-full h-full object-cover object-[center_85%]' }" role="presentation" />
       <div class="absolute inset-0 bg-black/80"></div>
     </section>
     <!-- Signature Dish Accordion -->
