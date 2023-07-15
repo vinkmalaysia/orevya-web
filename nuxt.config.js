@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         "@nuxtjs/google-fonts",
 
         // https://v1.image.nuxtjs.org/
-        "@nuxt/image-edge",
+        "@nuxt/image",
 
         // https://motion.vueuse.org/
         "@vueuse/motion/nuxt",
@@ -37,5 +37,10 @@ export default defineNuxtConfig({
         plugins: [
             Markdown(),
         ],
+    },
+    nitro: {
+        // Workaround for IPX bug
+        // https://github.com/nuxt/image/issues/866#issuecomment-1588284530
+        node: true,
     },
 })

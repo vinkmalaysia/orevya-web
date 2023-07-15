@@ -196,7 +196,7 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper.min.css';
+import 'swiper/css';
 
 import { gsap } from "gsap";
 
