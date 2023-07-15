@@ -9,21 +9,19 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
-  "devDependencies": {
+  "dependencies": {
     "@nuxt/image": "rc",
     "@nuxtjs/google-fonts": "^3.0.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt": "^3.6.3",
-    "vite-plugin-md": "^0.22.5"
-  },
-  "dependencies": {
     "@vueuse/core": "^10.2.1",
     "@vueuse/motion": "^2.0.0",
     "gsap": "^3.12.2",
     "lodash-es": "^4.17.21",
+    "nuxt": "^3.6.3",
     "smoothscroll-for-websites": "^1.4.10",
     "splitting": "^1.0.6",
     "swiper": "^10.0.4",
+    "vite-plugin-md": "^0.22.5",
     "vue-tippy": "^6.2.0",
     "vue3-mq": "^3.1.3"
   }
