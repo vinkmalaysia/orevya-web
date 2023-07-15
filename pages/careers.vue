@@ -1,5 +1,5 @@
 <template>
-  <main class="relative w-full pt-14 xl:pt-18 pb-20 bg-[var(--color-secondary)]">
+  <main class="relative w-full pt-14 xl:pt-18 pb-20 bg-[#35403d]">
     <Title>OREVYA - Careers</Title>
     <div class="absolute top-0 w-full h-full"></div>
     <article class="py-12 relative font-Jost">

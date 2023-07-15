@@ -1,14 +1,14 @@
 <template>
   <main class="max-lg:mt-14" ref="rootEl">
-    <section class="grid md:grid-flow-col md:auto-cols-fr">
-      <div class="relative bg-[#252C2A] w-full h-full" data-gsap-animate="hero">
-        <nuxt-picture src="/images/interior-2.jpg" sizes="xs:100vw sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw" role="presentation" :imgAttrs="{ class: 'min-w-full min-h-full object-cover object-top' }" />
+    <section class="flex flex-col xl:flex-row" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
+      <div class="relative bg-[#252C2A]" data-gsap-animate="hero">
+        <nuxt-picture src="/images/interior-2.jpg" sizes="xs:100vw md:50vw xl:50vw 2xl:50vw" role="presentation" :imgAttrs="{ class: 'min-h-full object-cover object-top max-xl:w-full max-xl:object-bottom max-xl:h-48' }" />
         <div class="absolute inset-0 bg-[rgba(0,53,71,.5)]"></div>
       </div>
-      <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48" style="background: linear-gradient(355deg, #533821 0%, #252C2A 100%);">
+      <section class="px-16 lg:px-24 pt-24 pb-24 2xl:py-48">
         <h1 class="font-Jost font-bold text-2xl text-white" data-gsap-animate="hero">OREVYA</h1>
         <p class="font-CormorantGaramond font-semibold text-5xl leading-12 md:text-6xl my-6 text-[#D2B48C]" data-gsap-animate="hero">Exceptional Cuisine</p>
-        <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 my-6" data-gsap-animate="hero">Starts with Superior Ingredients</p>
+        <p class="font-CormorantGaramond text-xl md:text-3xl text-white/80 my-6" data-gsap-animate="hero">Starts with superior ingredients</p>
         <div class="text-center py-2" data-gsap-animate="hero">
           <nuxt-img src="/images/title-border.png" height="17" width="110" role="presentation" />
         </div>
@@ -29,13 +29,13 @@
       </section>
     </section>
     <section class="relative h-[250px] lg:h-[400px]" data-gsap-animate="hero-steak">
-      <nuxt-picture src="/images/homepage-steak.jpg" sizes="xs:100vw sm:100vw" :imgAttrs="{ class: 'w-full h-full object-cover object-[center_85%]' }" role="presentation" />
-      <div class="absolute inset-0 bg-black/80"></div>
+      <nuxt-picture src="/images/homepage-steak.jpg" sizes="xs:100vw sm:100vw xl:100vw" :imgAttrs="{ class: 'w-full h-full object-cover object-[center_65%]' }" role="presentation" />
+      <div class="absolute inset-0 grayscale" style="background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgb(255 255 255 / 85%) 30%, rgb(255 255 255 / 75%) 40%, rgb(255 255 255 / 50%) 60%, rgba(255,255,255,0) 100%)"></div>
     </section>
     <!-- Signature Dish Accordion -->
     <section id="section-homepage-signature">
       <div class="pt-6 mt-12 text-center">
-        <h2 class="text-7xl md:text-8xl !leading-[7rem] md:!leading-[11rem] font-MrsSaintDelafield text-[var(--color-primary)]" data-gsap-animate="signature" v-html="signatureTitle"></h2>
+        <h2 class="text-7xl md:text-8xl !leading-[7rem] md:!leading-[11rem] font-MrsSaintDelafield text-[var(--color-secondary)]" data-gsap-animate="signature" v-html="signatureTitle"></h2>
       </div>
       <div class="text-center py-3 mb-12">
         <svg viewBox="0 0 100.43 3.32" class="w-[200px] md:w-[300px] fill-neutral-300 mx-auto">
@@ -114,7 +114,7 @@
       </ClientOnly>
       <div class="text-center mt-8 xl:my-16">
         <NuxtLink to="/menu">
-          <button class="font-Jost text-sm uppercase font-medium transition-[padding] py-4 px-12 hover:px-14 bg-[var(--color-primary)] text-white">View Menu</button>
+          <button class="font-Jost text-sm uppercase font-medium transition-[padding] py-4 px-12 hover:px-14 bg-[var(--color-secondary)] text-white">View Menu</button>
         </NuxtLink>
       </div>
     </section>
@@ -172,7 +172,7 @@
       visibility: visible;
       opacity: 0;
       transition: all 0.6s cubic-bezier(0.4,0,0.6,1);
-      transition-delay: calc(0.05s * var(--char-index));
+      transition-delay: calc(0.025s * var(--char-index));
       transform: translateY(75%);
     }
   }

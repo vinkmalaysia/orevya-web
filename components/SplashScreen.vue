@@ -31,10 +31,6 @@
   background: linear-gradient(90deg, rgba(186,105,0,1) 0%, rgba(218,208,180,1) 30%, rgba(226,226,226,1) 50%, rgba(218,208,180,1) 70%, rgba(186,105,0,1) 100%);
   background-size: 200% auto;
   animation: loop 2s linear infinite;
-
-  @screen md  {
-    @apply h-[4px] rounded-full;
-  }
 }
 
 @keyframes loop {
