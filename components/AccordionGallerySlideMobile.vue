@@ -1,7 +1,7 @@
 <template>
   <div class="group relative h-full">
     <div class="absolute top-0 w-[100.3%] left-1/2 h-full -translate-x-1/2 overflow-hidden rounded-3xl">
-      <nuxt-picture :alt="title" sizes="xs:100vw sm:100vw md:100vw" :src="src" :imgAttrs="{ class: 'absolute w-full h-full top-0 left-1/2 -translate-x-1/2 object-cover' }" />
+      <nuxt-picture :alt="title" :src="src" sizes="xs:100vw sm:100vw md:100vw xl:100vw" :imgAttrs="{ class: 'absolute w-full h-full top-0 left-1/2 -translate-x-1/2 object-cover' }" />
     </div>
     <div class="absolute inset-0 opacity-50 duration-1000 rounded-b-3xl" style="background: linear-gradient(360deg, rgba(0,0,0) 17.79%, rgba(0,0,0,0) 68.15%);" />
     <figcaption class="font-Jost absolute max-w-[80vw] bottom-0 px-6 pt-3 pb-8" style="text-shadow: rgb(0 0 0 / 50%) 0 4px 18px;">
