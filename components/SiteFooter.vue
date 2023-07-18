@@ -84,7 +84,7 @@
       <span>
         <NuxtLink to="/privacy" class="[&:not(:first-child)]:ml-3 px-3 py-0.5 rounded-full border border-[#b77e4d] hover:border-[#e1a16a] align-middle text-[#b77e4d] hover:text-[#e1a16a]">Privacy Policy</NuxtLink>
       </span>
-      <div class="mt-12 font-medium text-[#E3DCC2] text-sm">&copy; Orevya, All rights reserved. Made by <a href="#" class="text-[rgb(210,180,140)] hover:text-[#bb9564]">VINK Web Design</a></div>
+      <div class="mt-12 font-medium text-[#E3DCC2] text-sm">&copy; Orevya, All rights reserved. Made by <a href="https://www.vinkwebdesign.com" target="_blank" class="text-[rgb(210,180,140)] hover:text-[#bb9564]">VINK Web Design</a></div>
     </div>
   </footer>
 </template>
